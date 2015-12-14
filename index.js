@@ -194,10 +194,10 @@ var updateParams = function (refreshFeatureLayer, setTimeNow) {
     itineraryLanguage = $('#languageSelect option:selected').val();
     routingProfile = $('#routingProfile option:selected').val();
 
-    if (refreshFeatureLayer || setTimeNow) {
-        speedPatterns.redraw();
-        //        incidents.redraw();
-    }
+    //if (refreshFeatureLayer || setTimeNow) {
+    //    speedPatterns.redraw();
+    //    //        incidents.redraw();
+    //}
 
     routingControl._router.options.numberOfAlternatives = ((dynamicTimeOnStaticRoute)? 1:0) + ((staticTimeOnStaticRoute)? 1:0);
     routingControl.route();

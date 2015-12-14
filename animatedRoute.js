@@ -320,12 +320,13 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
                 map.panTo(g, { animate: false });
             }
 
-            var t1 = t * (l + 250);
+            var d = 2000 / Math.pow(map.getZoom(), 2);
+            var t1 = t*l + d;
             if (t1 > l)
                 t1 = l;
             var pt1 = linePath.node().getPointAtLength(t1);
 
-            var t0 = t * (l - 250);
+            var t0 = t*l - d;
             if (t0 < 0)
                 t0 = 0;
             var pt0 = linePath.node().getPointAtLength(t0);
@@ -350,7 +351,7 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
                 marker.attr("transform", "translate(" + (p.x) + "," + (p.y) + ") rotate(" + (deg) + ") translate(-" + offset + ", -" + offset*1.5 + ")"); //move marker
 
             //console.log(t + " " + l + " " + interpolate(t))
-            //console.log(deg);
+            console.log(pt1.x + "/" + pt1.y);
 
             return interpolate(t);
         };
