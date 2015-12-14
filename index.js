@@ -327,7 +327,7 @@ var BigPointLayer = L.CanvasLayer.extend({
 //            ctx.stroke();
         }
         ctx.fill();
-        ctx.fillStyle = "rgba(200, 200, 255, 1)";
+        ctx.fillStyle = "rgba(224, 224, 255, 1)";
         ctx.beginPath();
         for (var i = 0; i < this.mp; i++) {
             var p = this.particles[i];

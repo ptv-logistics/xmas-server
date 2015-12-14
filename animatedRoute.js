@@ -320,13 +320,18 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
                 map.panTo(g, { animate: false });
             }
 
-            var p1 = { x: 1, y: 0 };
-            var t0 = t*(l-150);
+            var t1 = t * (l + 250);
+            if (t1 > l)
+                t1 = l;
+            var pt1 = linePath.node().getPointAtLength(t1);
+
+            var t0 = t * (l - 250);
             if (t0 < 0)
                 t0 = 0;
-            var pt = linePath.node().getPointAtLength(t0);
-            var p0 = { x: p.x - pt.x, y: p.y + -pt.y };
-            //p0 = { x: 0, y: 1 };
+            var pt0 = linePath.node().getPointAtLength(t0);
+
+            var p0 = { x: pt1.x - pt0.x, y: pt1.y - pt0.y };
+            var p1 = { x: 1, y: 0 };
 
             var ort = ((p0.x * p1.x) + (p0.y * p1.y)) / (Math.sqrt(Math.pow(p0.x, 2) + Math.pow(p0.y, 2)) * Math.sqrt(Math.pow(p1.x, 2) + Math.pow(p1.y, 2)));
             var deg = Math.acos(ort) / Math.PI * 180.0;
@@ -337,14 +342,16 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
 
             var offset = santaSize / 2;
             //Move the marker to that point
-            if(deg > 90 || deg < -90)
+            //if ((deg < 0 && deg > -90) || (deg > -180 && deg > -90))
+            //    marker.attr("transform", "translate(" + (p.x) + "," + (p.y) + ") scale(1,-1) rotate(" + (180 - deg) + ") translate(-" + offset + ", -" + offset * 1.5 + ")"); //move marker
+            if (deg > 90 || deg < -90)
                 marker.attr("transform", "translate(" + (p.x) + "," + (p.y) + ") scale(-1,1) rotate(" + (180 - deg) + ") translate(-" + offset + ", -" + offset * 1.5 + ")"); //move marker
             else
                 marker.attr("transform", "translate(" + (p.x) + "," + (p.y) + ") rotate(" + (deg) + ") translate(-" + offset + ", -" + offset*1.5 + ")"); //move marker
 
             //console.log(t + " " + l + " " + interpolate(t))
+            //console.log(deg);
 
-//            console.log(deg);
             return interpolate(t);
         };
     } //end tweenDash
