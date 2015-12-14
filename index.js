@@ -90,7 +90,8 @@ var getLayer = function (profile) {
     return L.tileLayer('http://api{s}-xstwo.cloud.ptvgroup.com/services/rs/XMap/2.0/map/{z}/{x}/{y}/' + profile, {
         attribution: '<a href="http://www.ptvgroup.com">PTV</a>, TOMTOM',
         maxZoom: 18,
-        subdomains: '1234'
+        subdomains: '1234',
+        unloadInvisibleTiles: true
     });
 }
 
