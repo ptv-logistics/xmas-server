@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Feature Layer Labs</title>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.7/leaflet.css" />
     <link rel="stylesheet" href="lib/leaflet-routing-machine.css" />
     <link rel="stylesheet" href="lib/leaflet.iconlabel.css" />
     <link rel="stylesheet" href="lib/forkme.css" />
@@ -216,7 +216,7 @@
         </div>
     </div>
     <div id="map" class="map"></div>
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.7/leaflet.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="lib/leaflet_canvas_layer.js"></script>
     <script src="lib/d3.min.js" charset="utf-8"></script>
