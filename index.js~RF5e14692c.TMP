@@ -79,7 +79,7 @@ $('#doLoop').attr("checked", doLoop);
 $('#scenarioSelect').val(scenario);
 
 var sidebar = L.control.sidebar('sidebar').addTo(map);
-//sidebar.open("home");
+sidebar.open("home");
 
 fixClickPropagationForIE(sidebar._sidebar);
 
