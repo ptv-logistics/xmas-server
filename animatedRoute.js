@@ -141,6 +141,8 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
         .attr("r", 3)
         .attr("class", "waypoints");
 
+    var colors = ["yellow", "#a00", "black"];
+
     // Here we will make the points into a single
     // line/path. Note that we surround the featuresdata
     // with [] to tell d3 to treat all the points as a
@@ -153,8 +155,8 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
         .append("path")
         .attr("id", "tr" + animId)
         .attr("class", "lineConnect")
-        .style({ 'stroke': 'Blue', 'fill': 'none', 'stroke-width': '6px' })
-        .style("opacity", ".6");
+        .style({ 'stroke': colors[index], 'fill': 'none', 'stroke-width': '8px' })
+        .style("opacity", ".8");
 
     // This will be our traveling circle it will
     // travel along our path
