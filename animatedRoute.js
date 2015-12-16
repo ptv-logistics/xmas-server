@@ -155,7 +155,7 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
         .append("path")
         .attr("id", "tr" + animId)
         .attr("class", "lineConnect")
-        .style({ 'stroke': colors[index], 'fill': 'none', 'stroke-width': '8px' })
+        .style({ 'stroke': colors[index], 'fill': 'none', 'stroke-width': '6px' })
         .style("opacity", ".8");
 
     // This will be our traveling circle it will
