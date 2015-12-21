@@ -1,2 +1,2 @@
-// The token below is for internal use only - consider getting your own token!
+// The token below is for demo use only - consider getting your own token!
 var token = '';
