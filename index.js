@@ -52,7 +52,8 @@ var replay = function () {
 }
 
 var getLayer = function (profile) {
-    return L.tileLayer('http://api{s}-xstwo.cloud.ptvgroup.com/services/rs/XMap/2.0/map/{z}/{x}/{y}/' + profile, {
+    return L.tileLayer('http://api{s}-xstwo.cloud.ptvgroup.com/services/rest/XMap/2.0/map/{z}/{x}/{y}/'
+                        + profile + '?xtok=' + token, {
         attribution: '<a href="http://www.ptvgroup.com">PTV</a>, TOMTOM',
         maxZoom: 18,
         subdomains: '1234',
@@ -100,26 +101,26 @@ var setNow = function () {
 }
 
 var updateScenario = function() {
-	scenario = $('#scenarioSelect option:selected').val();
+    scenario = $('#scenarioSelect option:selected').val();
 
 
   if(scenario === 'xmas')
-	routingControl.setWaypoints([
+    routingControl.setWaypoints([
             L.latLng(48.01269, 7.72334),
             L.latLng(49.01328, 8.42806)]);
-	else if(scenario === 'New York')
-		routingControl.setWaypoints([
-			L.latLng(40.78263, -74.03331),
-			L.latLng(40.71307, -74.00724)]);
-	else if(scenario === 'Paris')
-		routingControl.setWaypoints([
-			L.latLng(y=48.92233, 2.32382),
-			L.latLng(y=48.80220, 2.44454)]);
-	else if(scenario === 'Karlsruhe')
-		routingControl.setWaypoints([
-			L.latLng(49.01502, 8.37922),
-			L.latLng(49.01328, 8.42806)]);
-		
+    else if(scenario === 'New York')
+        routingControl.setWaypoints([
+            L.latLng(40.78263, -74.03331),
+            L.latLng(40.71307, -74.00724)]);
+    else if(scenario === 'Paris')
+        routingControl.setWaypoints([
+            L.latLng(y=48.92233, 2.32382),
+            L.latLng(y=48.80220, 2.44454)]);
+    else if(scenario === 'Karlsruhe')
+        routingControl.setWaypoints([
+            L.latLng(49.01502, 8.37922),
+            L.latLng(49.01328, 8.42806)]);
+        
     routingControl.route();
 }
 
@@ -157,7 +158,7 @@ var routingControl = L.Routing.control({
         },
         geocoder: L.Control.Geocoder.ptv({
         serviceUrl: 'https://api-eu-test.cloud.ptvgroup.com/xlocate/rs/XLocate/',
-		token: token }),
+        token: token }),
         reverseWaypoints: true
     }),
     altLineOptions: {
@@ -166,8 +167,8 @@ var routingControl = L.Routing.control({
             {color: 'white', opacity: 0.8, weight: 6},
             {color: 'blue', opacity: 0.5, weight: 2}
         ],
-	},
-    showAlternatives: true,		
+    },
+    showAlternatives: true,     
     router: L.Routing.ptv({
         serviceUrl: 'https://api-eu-test.cloud.ptvgroup.com/xroute/rs/XRoute/',
         token: token,
@@ -189,7 +190,7 @@ var routingControl = L.Routing.control({
                 parameter: "ROUTE_LANGUAGE",
                 value: itineraryLanguage
             });
-	
+    
             if(idx == 0 || (idx == 1 && dynamicTimeOnStaticRoute)) 
             request.callerContext.properties.push({
                 key: "ProfileXMLSnippet",
