@@ -52,7 +52,7 @@ var replay = function () {
 }
 
 var getLayer = function (profile) {
-    return L.tileLayer('http://api{s}-xstwo.cloud.ptvgroup.com/services/rest/XMap/2.0/map/{z}/{x}/{y}/'
+    return L.tileLayer('http://api{s}-xstwo.cloud.ptvgroup.com/services/rest/XMap/tile/{z}/{x}/{y}/'
                         + profile + '?xtok=' + token, {
         attribution: '<a href="http://www.ptvgroup.com">PTV</a>, TOMTOM',
         maxZoom: 18,
