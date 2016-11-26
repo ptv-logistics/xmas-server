@@ -353,7 +353,7 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
                 marker.attr("transform", "translate(" + (p.x) + "," + (p.y) + ") rotate(" + (deg) + ") translate(-" + offset + ", -" + offset*1.5 + ")"); //move marker
 
             //console.log(t + " " + l + " " + interpolate(t))
-            console.log(pt1.x + "/" + pt1.y);
+            // console.log(pt1.x + "/" + pt1.y);
 
             return interpolate(t);
         };
