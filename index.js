@@ -224,7 +224,7 @@ var routingControl = L.Routing.control({
                 if (staticTimeOnStaticRoute)
                     alts[2].name = '<i style="background:black"></i>Static Route';
             }
-            replaySpeed = responses[0].info.time / 25;
+            replaySpeed = responses[0].info.time / 10;
             $('#replaySpeed').val(replaySpeed);
             replay();
         }
