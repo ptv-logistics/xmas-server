@@ -61,7 +61,14 @@ var getLayer = function (profile) {
     });
 }
 
-getLayer("silkysand").addTo(map),
+         vectormaps.renderPTV.PARSE_COORDS_WORKER = "lib/vectormaps-worker.min.js";
+
+         // add PTV tile and label (overlay) layers
+         var overlayLayer = vectormaps.overlayLayer();
+         var layer = vectormaps.vectorTileLayer('http://xvector.westeurope.cloudapp.azure.com/vectormaps/vectormaps/', null, overlayLayer);
+         var vectorLayer = L.layerGroup([layer, overlayLayer]).addTo(map);
+		 
+var rasterLayer = getLayer("silkysand");
 
 new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
@@ -224,8 +231,11 @@ var routingControl = L.Routing.control({
     }),
     formatter: new L.Routing.Formatter({roundingSensitivity: 1000}),
     routeWhileDragging: false,
-    routeDragInterval: 1000
+    routeDragInterval: 1000,
+	collapsible: true
 }).addTo(map);
+
+routingControl.hide();
 
 routingControl.on('routingerror', function (e) {
     alert(e.error.responseJSON.errorMessage);
@@ -331,12 +341,48 @@ var BigPointLayer = L.CanvasLayer.extend({
 
 });
 
+var IceLayer = L.Class.extend({
 
-var layer = new BigPointLayer();
-layer.addTo(map);
+    initialize: function () {
+    },
+	
+	  addTo: function (map) {
+            map.addLayer(this);
+            return this;
+        },
 
-var filter = "brightness(120%)";
-map.getPanes().tilePane.style.webkitFilter = filter;
-map.getPanes().tilePane.style.filter = filter;
+    onAdd: function (map) {
+        this._map = map;
+
+		var filter = "saturate(20%) contrast(80%) brightness(120%)";
+		this._map.getPanes().tilePane.style.webkitFilter = filter;
+		this._map.getPanes().tilePane.style.filter = filter;
+    },
+
+    onRemove: function (map) {
+		var filter = "";
+		this._map.getPanes().tilePane.style.webkitFilter = filter;
+		this._map.getPanes().tilePane.style.filter = filter;
+    }
+});
+
+
+
+var snowLayer = new BigPointLayer();
+snowLayer.addTo(map);
+
+var iceLayer = new IceLayer();
+iceLayer.addTo(map);
+
+var baseLayers = {
+    "Raster": rasterLayer,
+    "Vector": vectorLayer
+};
+var overlays = {
+	"Snow": snowLayer,
+	"Ice": iceLayer
+};
+L.control.layers(baseLayers, overlays, { position: 'topleft' }).addTo(map);
+
 
 updateScenario();
