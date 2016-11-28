@@ -233,7 +233,7 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
     function transition() {
         linePath.transition()
             .duration(sumTime * 1000 / replaySpeed)
-            .ease("linear")
+     		.ease("linear")
             .attrTween("stroke-dasharray", tweenDash)
             .each("interrupt", function () {
                 d3.select('#' + animId).remove();
