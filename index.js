@@ -1,8 +1,8 @@
 if (!token)
     alert("you need an xServer internet token to run this sample!");
 
-var hour = moment('2015-08-17T18:30:00+02:00');
-var enableSpeedPatterns = true;
+var hour = moment('2016-12-24T16:30:00+02:00');
+var enableSpeedPatterns = false;
 var enableRestrictionZones = false;
 var enableTrafficIncidents = false;
 var enableTruckAttributes = false;
@@ -52,7 +52,7 @@ var replay = function () {
 }
 
 var getLayer = function (profile) {
-    return L.tileLayer('http://api{s}-xstwo.cloud.ptvgroup.com/services/rest/XMap/tile/{z}/{x}/{y}/'
+    return L.tileLayer('http://s0{s}-dev-xserver2.cloud.ptvgroup.com/services/rest/XMap/tile/{z}/{x}/{y}/'
                         + profile + '?xtok=' + token, {
         attribution: '<a href="http://www.ptvgroup.com">PTV</a>, TOMTOM',
         maxZoom: 18,
@@ -261,13 +261,17 @@ var BigPointLayer = L.CanvasLayer.extend({
                 d: Math.random() * this.mp //density
             });
         }
-
-		// window.requestAnimationFrame(L.bind(this.xrender, this));
     },
 	
+	lProgress : 0,
+	
     render: function (timestamp) {
-		if (!this.start) this.start = timestamp;
+		if(this.start == 0) this.start = timestamp;
 		var progress = timestamp - this.start;
+		var dProgress = progress - this.lProgress;
+		this.lProgress = progress;
+
+        this.xupdate(progress, dProgress);
 
         var canvas = this.getCanvas();
         var ctx = canvas.getContext('2d');
@@ -283,6 +287,8 @@ var BigPointLayer = L.CanvasLayer.extend({
             ctx.arc(p.x, p.y, p.r+1, 0, Math.PI * 2, true);
 //            ctx.stroke();
         }
+		
+
         ctx.fill();
         ctx.fillStyle = "rgba(224, 224, 255, 1)";
         ctx.beginPath();
@@ -294,31 +300,32 @@ var BigPointLayer = L.CanvasLayer.extend({
         }
         ctx.fill();
 
-        this.xupdate(timestamp);
 
 		this._render();
     },
 
     //Function to move the snowflakes
     //angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
-    angle: 0,
+	
+    xupdate: function (progress, dProgress) {
 
-    xupdate: function (progress) {
-		var angle = progress / 6000;
+		var angle = progress / 1000;
+		var d = dProgress / 20;
         var particles = this.particles;
         var canvas = this.getCanvas();
         var W = canvas.width;
         var H = canvas.height;
 
-        angle += 0.01;
+		// console.log(d);
+
         for (var i = 0; i < this.mp; i++) {
             var p = particles[i];
             //Updating X and Y coordinates
             //We will add 1 to the cos function to prevent negative values which will lead flakes to move upwards
             //Every particle has its own density which can be used to make the downward movement different for each flake
             //Lets make it more random by adding in the radius
-            p.y += Math.cos(angle + p.d) + 1 + p.r / 2;
-            p.x += Math.sin(angle) * 2;
+            p.y += d * (Math.cos(angle + p.d) + 1 + p.r / 2);
+            p.x += d * Math.sin(angle) * 2;
 
             //Sending flakes back from the top when it exits
             //Lets make it a bit more organic and let flakes enter from the left and right also.
@@ -336,7 +343,7 @@ var BigPointLayer = L.CanvasLayer.extend({
                     else {
                         //Enter from the right
                         particles[i] = { x: W + 5, y: Math.random() * H, r: p.r, d: p.d };
-                    }
+                    }					
                 }
             }
         }
