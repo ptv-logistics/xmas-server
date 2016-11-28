@@ -244,15 +244,13 @@ routingControl.on('routingerror', function (e) {
 var BigPointLayer = L.CanvasLayer.extend({
     particles: [],
     mp: 100, //max particles
-    onAdd: function (map) {
+    start: 0,
+	onAdd: function (map) {
         L.CanvasLayer.prototype.onAdd.call(this, map);
 
         var canvas = this.getCanvas();
         var W = canvas.width;
         var H = canvas.height;
-
-        //animation loop
-        setInterval(this.render, 33);
 
         //snowflake particles
         for (var i = 0; i < this.mp; i++) {
@@ -264,9 +262,13 @@ var BigPointLayer = L.CanvasLayer.extend({
             });
         }
 
+		// window.requestAnimationFrame(L.bind(this.xrender, this));
     },
+	
+    render: function (timestamp) {
+		if (!this.start) this.start = timestamp;
+		var progress = timestamp - this.start;
 
-    render: function () {
         var canvas = this.getCanvas();
         var ctx = canvas.getContext('2d');
 
@@ -292,30 +294,31 @@ var BigPointLayer = L.CanvasLayer.extend({
         }
         ctx.fill();
 
-        this.update();
-        this.redraw();
+        this.xupdate(timestamp);
 
+		this._render();
     },
 
     //Function to move the snowflakes
     //angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
     angle: 0,
 
-    update: function () {
+    xupdate: function (progress) {
+		var angle = progress / 6000;
         var particles = this.particles;
         var canvas = this.getCanvas();
         var W = canvas.width;
         var H = canvas.height;
 
-        this.angle += 0.01;
+        angle += 0.01;
         for (var i = 0; i < this.mp; i++) {
             var p = particles[i];
             //Updating X and Y coordinates
             //We will add 1 to the cos function to prevent negative values which will lead flakes to move upwards
             //Every particle has its own density which can be used to make the downward movement different for each flake
             //Lets make it more random by adding in the radius
-            p.y += Math.cos(this.angle + p.d) + 1 + p.r / 2;
-            p.x += Math.sin(this.angle) * 2;
+            p.y += Math.cos(angle + p.d) + 1 + p.r / 2;
+            p.x += Math.sin(angle) * 2;
 
             //Sending flakes back from the top when it exits
             //Lets make it a bit more organic and let flakes enter from the left and right also.
@@ -326,7 +329,7 @@ var BigPointLayer = L.CanvasLayer.extend({
                 }
                 else {
                     //If the flake is exitting from the right
-                    if (Math.sin(this.angle) > 0) {
+                    if (Math.sin(angle) > 0) {
                         //Enter from the left
                         particles[i] = { x: -5, y: Math.random() * H, r: p.r, d: p.d };
                     }
