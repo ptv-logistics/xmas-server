@@ -381,7 +381,7 @@ var snowLayer = new BigPointLayer();
 snowLayer.addTo(map);
 
 var iceLayer = new IceLayer();
-iceLayer.addTo(map);
+//iceLayer.addTo(map);
 
 var baseLayers = {
     "Raster": rasterLayer,
