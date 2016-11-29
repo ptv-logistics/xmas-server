@@ -65,7 +65,8 @@ var getLayer = function (profile) {
 
          // add PTV tile and label (overlay) layers
          var overlayLayer = vectormaps.overlayLayer();
-         var layer = vectormaps.vectorTileLayer('http://xvector.westeurope.cloudapp.azure.com/vectormaps/vectormaps/', null, overlayLayer);
+         var layer = vectormaps.vectorTileLayer(
+			'http://xvector.westeurope.cloudapp.azure.com/vectormaps/vectormaps/', {opacity: 0.4}, overlayLayer);
          var vectorLayer = L.layerGroup([layer, overlayLayer]).addTo(map);
 		 
 var rasterLayer = getLayer("silkysand");
@@ -279,27 +280,26 @@ var BigPointLayer = L.CanvasLayer.extend({
         // clear canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = "rgba(0,0,255, 0.90)";
+        ctx.fillStyle = "rgba(64, 64, 64, 255)";
         ctx.beginPath();
         for (var i = 0; i < this.mp; i++) {
             var p = this.particles[i];
             ctx.moveTo(p.x, p.y);
             ctx.arc(p.x, p.y, p.r+1, 0, Math.PI * 2, true);
-//            ctx.stroke();
+            //            ctx.stroke();
         }
-		
-
         ctx.fill();
-        ctx.fillStyle = "rgba(224, 224, 255, 1)";
+
+		        ctx.fillStyle = "rgba(255, 255, 255, 255)";
         ctx.beginPath();
         for (var i = 0; i < this.mp; i++) {
             var p = this.particles[i];
             ctx.moveTo(p.x, p.y);
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
-            //            ctx.stroke();
+//            ctx.stroke();
         }
         ctx.fill();
-
+		
 
 		this._render();
     },
@@ -382,7 +382,7 @@ var snowLayer = new BigPointLayer();
 snowLayer.addTo(map);
 
 var iceLayer = new IceLayer();
-iceLayer.addTo(map);
+//iceLayer.addTo(map);
 
 var baseLayers = {
     "Raster": rasterLayer,
