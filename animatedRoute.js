@@ -154,9 +154,7 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
         .enter()
         .append("path")
         .attr("id", "tr" + animId)
-        .attr("class", "lineConnect")
-        .style({ 'stroke': colors[index], 'fill': 'none', 'stroke-width': '6px' })
-        .style("opacity", ".8");
+		.attr("visibility", "hidden")
 
     // This will be our traveling circle it will
     // travel along our path
@@ -233,7 +231,7 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
     function transition() {
         linePath.transition()
             .duration(sumTime * 1000 / replaySpeed)
-     		.ease("linear")
+            .ease("linear")
             .attrTween("stroke-dasharray", tweenDash)
             .each("interrupt", function () {
                 d3.select('#' + animId).remove();
@@ -355,7 +353,7 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
             //console.log(t + " " + l + " " + interpolate(t))
             // console.log(pt1.x + "/" + pt1.y);
 
-            return interpolate(t);
+            return 0;
         };
     } //end tweenDash
 
