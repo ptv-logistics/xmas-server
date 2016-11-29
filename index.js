@@ -66,7 +66,7 @@ var getLayer = function (profile) {
          // add PTV tile and label (overlay) layers
          var overlayLayer = vectormaps.overlayLayer();
          var layer = vectormaps.vectorTileLayer(
-			'http://xvector.westeurope.cloudapp.azure.com/vectormaps/vectormaps/', {opacity: 0.4}, overlayLayer);
+			'http://xvector.westeurope.cloudapp.azure.com/vectormaps/vectormaps/', null, overlayLayer);
          var vectorLayer = L.layerGroup([layer, overlayLayer]).addTo(map);
 		 
 var rasterLayer = getLayer("silkysand");
@@ -364,15 +364,14 @@ var IceLayer = L.Class.extend({
     onAdd: function (map) {
         this._map = map;
 
-		var filter = "saturate(20%) contrast(80%) brightness(120%)";
-		this._map.getPanes().tilePane.style.webkitFilter = filter;
-		this._map.getPanes().tilePane.style.filter = filter;
+		return;
+		rasterLayer.setOpacity(0.4);
+		layer.setOpacity(0.4);
     },
 
     onRemove: function (map) {
-		var filter = "";
-		this._map.getPanes().tilePane.style.webkitFilter = filter;
-		this._map.getPanes().tilePane.style.filter = filter;
+		rasterLayer.setOpacity(1);
+		layer.setOpacity(1);
     }
 });
 
@@ -382,7 +381,7 @@ var snowLayer = new BigPointLayer();
 snowLayer.addTo(map);
 
 var iceLayer = new IceLayer();
-//iceLayer.addTo(map);
+iceLayer.addTo(map);
 
 var baseLayers = {
     "Raster": rasterLayer,
