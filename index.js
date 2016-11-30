@@ -65,18 +65,16 @@ var getLayer = function (profile) {
 
          // add PTV tile and label (overlay) layers
          var overlayLayer = vectormaps.overlayLayer();
-         var vectorWinter = vectormaps.vectorTileLayer(
+         var layer = vectormaps.vectorTileLayer(
 			'http://xvector.westeurope.cloudapp.azure.com/vectormaps/vectormaps/', 
 			{stylesUrl: 'styles/styles-winter.json'}, overlayLayer);
-         var vectorLayer = L.layerGroup([vectorWinter, overlayLayer]).addTo(map);
+         var vectorWinter = L.layerGroup([layer, overlayLayer]).addTo(map);
 
          overlayLayer = vectormaps.overlayLayer();
-         var vectorDefault = vectormaps.vectorTileLayer(
+         layer = vectormaps.vectorTileLayer(
 			'http://xvector.westeurope.cloudapp.azure.com/vectormaps/vectormaps/', 
 			{stylesUrl: 'styles/styles-default.json'}, overlayLayer);
-         vectorLayer = L.layerGroup([vectorDefault, overlayLayer]);
-		 
-
+         var vectorDefault = L.layerGroup([layer, overlayLayer]);
 		 
 var rasterLayer = getLayer("silkysand");
 
