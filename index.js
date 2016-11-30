@@ -388,8 +388,8 @@ var baseLayers = {
     "Vector": vectorLayer
 };
 var overlays = {
-	"Snow": snowLayer,
-	"Ice": iceLayer
+	"Snow": snowLayer
+//	"Ice": iceLayer
 };
 L.control.layers(baseLayers, overlays, { position: 'topleft' }).addTo(map);
 
