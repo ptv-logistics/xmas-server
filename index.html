@@ -247,5 +247,10 @@
     <script src="./token.js"></script>
     <script src="./tools.js"></script>
     <script src="./index.js"></script>
+    <script>
+       var params={};
+       location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v})
+       document.getElementById('doLoop').checked = (params.loop === 'true');
+    </script>
 </body>
 </html>
