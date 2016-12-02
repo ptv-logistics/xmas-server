@@ -120,9 +120,14 @@ var updateScenario = function() {
 
 
   if(scenario === 'xmas')
+    {
     routingControl.setWaypoints([
-            L.latLng(48.01269, 7.72334),
-            L.latLng(49.01328, 8.42806)]);
+			new L.Routing.Waypoint(L.latLng(49.01328, 8.42806), "PTV"),
+            new L.Routing.Waypoint(L.latLng(48.0126, 7.72338), "Sankt Nikolaus"),
+            new L.Routing.Waypoint(L.latLng(49.92446, 9.80032), "Himmelstadt"),
+            new L.Routing.Waypoint(L.latLng(49.90505, 8.06738), "Engelstadt"),
+            new L.Routing.Waypoint(L.latLng(49.01328, 8.42806), "PTV")]);
+	}
     else if(scenario === 'New York')
         routingControl.setWaypoints([
             L.latLng(40.78263, -74.03331),
@@ -168,7 +173,8 @@ var routingControl = L.Routing.control({
         createMarker: function (i, wp) {
             return L.marker(wp.latLng, {
                 draggable: true,
-                icon: new L.Icon.Label.Default({ labelText: String.fromCharCode(65 + i) })
+                icon: wp.name ? new L.Icon.Label.Default({ labelText: wp.name }) :
+				    new L.Icon.Label.Default({ labelText: String.fromCharCode(65 + i) })
             });
         },
         geocoder: L.Control.Geocoder.ptv({
@@ -232,7 +238,7 @@ var routingControl = L.Routing.control({
                 if (staticTimeOnStaticRoute)
                     alts[2].name = '<i style="background:black"></i>Static Route';
             }
-            replaySpeed = responses[0].info.time / 10;
+            replaySpeed = responses[0].info.time / 40;
             $('#replaySpeed').val(replaySpeed);
             replay();
         }

@@ -3,27 +3,27 @@
 	"s": [
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-0"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-0"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-0"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-0"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-0"
 		},
 		{
@@ -38,12 +38,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-0"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-0"
 		},
 		{
@@ -59,27 +59,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-1"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-1"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-1"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-1"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-1"
 		},
 		{
@@ -94,12 +94,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-1"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-1"
 		},
 		{
@@ -115,27 +115,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-2"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-2"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-2"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-2"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-2"
 		},
 		{
@@ -150,12 +150,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-2"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-2"
 		},
 		{
@@ -171,27 +171,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-3"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-3"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-3"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-3"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-3"
 		},
 		{
@@ -206,12 +206,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-3"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-3"
 		},
 		{
@@ -235,27 +235,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-4"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-4"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-4"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-4"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-4"
 		},
 		{
@@ -270,12 +270,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-4"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-4"
 		},
 		{
@@ -299,27 +299,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-5"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-5"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-5"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-5"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-5"
 		},
 		{
@@ -334,12 +334,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-5"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-5"
 		},
 		{
@@ -379,27 +379,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-6"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-6"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-6"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-6"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-6"
 		},
 		{
@@ -414,12 +414,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-6"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-6"
 		},
 		{
@@ -429,7 +429,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": true,
 			"tag": "WaldStyle-6"
 		},
@@ -495,27 +495,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-7"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-7"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-7"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-7"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-7"
 		},
 		{
@@ -530,12 +530,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-7"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-7"
 		},
 		{
@@ -545,7 +545,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": true,
 			"tag": "WaldStyle-7"
 		},
@@ -632,27 +632,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-8"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-8"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-8"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-8"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-8"
 		},
 		{
@@ -667,12 +667,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-8"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-8"
 		},
 		{
@@ -682,7 +682,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": true,
 			"tag": "WaldStyle-8"
 		},
@@ -711,7 +711,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": true,
 			"tag": "ParkStyle-8"
 		},
@@ -827,27 +827,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-9"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-9"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-9"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-9"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-9"
 		},
 		{
@@ -862,12 +862,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-9"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-9"
 		},
 		{
@@ -877,7 +877,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": false,
 			"tag": "WaldStyle-9"
 		},
@@ -904,7 +904,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": true,
 			"tag": "ParkStyle-9"
 		},
@@ -1436,27 +1436,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-10"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-10"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-10"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-10"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-10"
 		},
 		{
@@ -1471,12 +1471,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-10"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-10"
 		},
 		{
@@ -1486,7 +1486,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": false,
 			"tag": "WaldStyle-10"
 		},
@@ -1513,7 +1513,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": true,
 			"tag": "ParkStyle-10"
 		},
@@ -2100,27 +2100,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-11"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-11"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-11"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-11"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-11"
 		},
 		{
@@ -2135,12 +2135,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-11"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-11"
 		},
 		{
@@ -2150,7 +2150,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": false,
 			"tag": "WaldStyle-11"
 		},
@@ -2176,7 +2176,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"tag": "ParkStyle-11"
 		},
 		{
@@ -2795,27 +2795,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-12"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-12"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-12"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-12"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-12"
 		},
 		{
@@ -2830,12 +2830,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-12"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-12"
 		},
 		{
@@ -2845,7 +2845,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": false,
 			"tag": "WaldStyle-12"
 		},
@@ -2871,7 +2871,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"tag": "ParkStyle-12"
 		},
 		{
@@ -3510,27 +3510,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-13"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-13"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-13"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-13"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-13"
 		},
 		{
@@ -3545,12 +3545,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-13"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-13"
 		},
 		{
@@ -3560,7 +3560,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": false,
 			"tag": "WaldStyle-13"
 		},
@@ -3586,7 +3586,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"tag": "ParkStyle-13"
 		},
 		{
@@ -4367,29 +4367,29 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-14"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"disabled": false,
 			"tag": "BackgroundHeightsStyle0050-14"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"disabled": false,
 			"tag": "BackgroundHeightsStyle0200-14"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-14"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-14"
 		},
 		{
@@ -4404,12 +4404,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-14"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-14"
 		},
 		{
@@ -4419,7 +4419,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": false,
 			"tag": "WaldStyle-14"
 		},
@@ -4445,7 +4445,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"tag": "ParkStyle-14"
 		},
 		{
@@ -5262,27 +5262,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-15"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-15"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-15"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-15"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-15"
 		},
 		{
@@ -5297,12 +5297,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-15"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-15"
 		},
 		{
@@ -5312,7 +5312,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": false,
 			"tag": "WaldStyle-15"
 		},
@@ -5338,7 +5338,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"tag": "ParkStyle-15"
 		},
 		{
@@ -6177,27 +6177,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-16"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-16"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-16"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-16"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-16"
 		},
 		{
@@ -6212,12 +6212,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-16"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-16"
 		},
 		{
@@ -6227,7 +6227,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": false,
 			"tag": "WaldStyle-16"
 		},
@@ -6253,7 +6253,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"tag": "ParkStyle-16"
 		},
 		{
@@ -7280,27 +7280,27 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(240,255,255)",
+			"c": "rgb(236,244,247)",
 			"tag": "BackgroundHeightsStyle0000-17"
 		},
 		{
 			"s": 1,
-			"c": "rgb(241,255,255)",
+			"c": "rgb(235,243,246)",
 			"tag": "BackgroundHeightsStyle0050-17"
 		},
 		{
 			"s": 1,
-			"c": "rgb(242,255,255)",
+			"c": "rgb(222,234,248)",
 			"tag": "BackgroundHeightsStyle0200-17"
 		},
 		{
 			"s": 1,
-			"c": "rgb(243,255,255)",
+			"c": "rgb(208,233,246)",
 			"tag": "BackgroundHeightsStyle0500-17"
 		},
 		{
 			"s": 1,
-			"c": "rgb(115,115,115)",
+			"c": "rgb(144,144,144)",
 			"tag": "BackgroundHeightsStyle1000-17"
 		},
 		{
@@ -7315,12 +7315,12 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(224,224,224)",
+			"c": "rgb(204,204,204)",
 			"tag": "BackgroundHeightsStyle3000-17"
 		},
 		{
 			"s": 1,
-			"c": "rgb(205,205,205)",
+			"c": "rgb(224,224,224)",
 			"tag": "BackgroundHeightsStyle4000-17"
 		},
 		{
@@ -7330,7 +7330,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"disabled": false,
 			"tag": "WaldStyle-17"
 		},
@@ -7356,7 +7356,7 @@
 		},
 		{
 			"s": 1,
-			"c": "rgb(102,132,109)",
+			"c": "rgb(201,220,201)",
 			"tag": "ParkStyle-17"
 		},
 		{
