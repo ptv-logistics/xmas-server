@@ -134,12 +134,6 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
     // these are the points that make up the path
     // they are unnecessary so I've make them
     // transparent for now
-    var ptFeatures = g.selectAll("circle")
-        .data(featuresdata)
-        .enter()
-        .append("circle")
-        .attr("r", 3)
-        .attr("class", "waypoints");
 
     var colors = ["yellow", "#a00", "black"];
 
@@ -192,12 +186,6 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
         // circle to represent a 1 dimensional point, the circle
         // might get cut off.
 
-        ptFeatures.attr("transform",
-            function (d) {
-                return "translate(" +
-                    applyLatLngToLayer(d).x + "," +
-                    applyLatLngToLayer(d).y + ")";
-            });
 
         // again, not best practice, but I'm harding coding
         // the starting point
@@ -232,7 +220,7 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
         linePath.transition()
             .duration(sumTime * 1000 / replaySpeed)
             .ease("linear")
-            .attrTween("stroke-dasharray", tweenDash)
+            .attrTween("stroke-width", tweenDash)
             .each("interrupt", function () {
                 d3.select('#' + animId).remove();
             })
@@ -294,19 +282,6 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
 
             var t = getRelTimeOnSegment(route, rTime);
 
-            // this is creating a function called interpolate which takes
-            // as input a single value 0-1. The function will interpolate
-            // between the numbers embedded in a string. An example might
-            // be interpolatString("0,500", "500,500") in which case
-            // the first number would interpolate through 0-500 and the
-            // second number through 500-500 (always 500). So, then
-            // if you used interpolate(0.5) you would get "250, 500"
-            // when input into the attrTween above this means give me
-            // a line of length 250 followed by a gap of 500. Since the
-            // total line length, though is only 500 to begin with this
-            // essentially says give me a line of 250px followed by a gap
-            // of 250px.
-            interpolate = d3.interpolateString("0," + l, l + "," + l);
             //t is fraction of time 0-1 since transition began
             var marker = d3.select("#marker" + index);
 
