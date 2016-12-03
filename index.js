@@ -12,7 +12,7 @@ var itineraryLanguage = 'EN';
 var routingProfile = 'carfast';
 var replaySpeed = 250;
 var responses = null;
-var doLoop = null;
+var doLoop = true;
 var scenario = 'xmas';
 
 var map = L.map('map', {
@@ -57,28 +57,29 @@ var getLayer = function (profile) {
         attribution: '<a href="http://www.ptvgroup.com">PTV</a>, TOMTOM',
         maxZoom: 18,
         subdomains: '1234',
-        unloadInvisibleTiles: true
+        unloadInvisibleTiles: true,
+		updateWhenIdle: false
     });
 }
 
          vectormaps.renderPTV.PARSE_COORDS_WORKER = "lib/vectormaps-worker.min.js";
 
          // add PTV tile and label (overlay) layers
-         var overlayLayer = vectormaps.overlayLayer();
+         var overlayLayer = vectormaps.overlayLayer({updateWhenIdle: false, unloadInvisibleTiles: true});
          var layer = vectormaps.vectorTileLayer(
 			'http://xvector.westeurope.cloudapp.azure.com/vectormaps/vectormaps/', 
-			{stylesUrl: 'styles/styles-winter.json'}, overlayLayer);
+			{stylesUrl: 'styles/styles-winter.json', updateWhenIdle: false, unloadInvisibleTiles: true}, overlayLayer);
          var vectorWinter = L.layerGroup([layer, overlayLayer]).addTo(map);
 
-         overlayLayer = vectormaps.overlayLayer();
+         overlayLayer = vectormaps.overlayLayer({updateWhenIdle: false, unloadInvisibleTiles: true});
          layer = vectormaps.vectorTileLayer(
 			'http://xvector.westeurope.cloudapp.azure.com/vectormaps/vectormaps/', 
-			{stylesUrl: 'styles/styles-default.json'}, overlayLayer);
+			{stylesUrl: 'styles/styles-default.json', updateWhenIdle: false, unloadInvisibleTiles: true}, overlayLayer);
          var vectorDefault = L.layerGroup([layer, overlayLayer]);
 		 
 var rasterLayer = getLayer("silkysand");
 
-new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+new L.Control.Zoom({ position: 'bottomleft' });
 
 // update ui
 $('#range').attr("value", hour.format());
