@@ -6,7 +6,7 @@ var buildD3Animations = function (alts, replaySpeed, doLoop) {
         // http://bl.ocks.org/rsudekum/5431771
         map._panes.svgPane = map._createPane('leaflet-overlay-pane', map.getPanes().labelPane);
 
-        // put the 'slowest' trace on tpo
+        // put the 'slowest' trace on top
         d3Layer[2] = new L.SvgLayer({ pointerEvents: 'none', pane: map._panes.svgPane }).addTo(map);
         d3Layer[0] = new L.SvgLayer({ pointerEvents: 'none', pane: map._panes.svgPane }).addTo(map);
         d3Layer[1] = new L.SvgLayer({ pointerEvents: 'none', pane: map._panes.svgPane }).addTo(map);
@@ -50,6 +50,19 @@ var buildD3Animations = function (alts, replaySpeed, doLoop) {
         var svg = d3.select(d3Layer[i].getPathRoot());
         buildD3Animation(alts[i], i, d3Layer[i], svg, replaySpeed);
     }
+}
+
+var elapsedTime = 0;
+
+var stopD3Animations = function()
+{
+    // cancel pending animations
+    for (var i = 0; i < 3; i++) {
+        var animId = "anim" + i;
+//        d3.select('#tr' + animId).transition().duration(0);
+        d3.select('#tr' + animId).transition().duration(0);
+//			tweenDash(elapsedtime);
+    }	
 }
 
 var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
@@ -160,14 +173,6 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
         .attr('width', santaSize);
     //.attr("class", "travelMarker" + index);
 
-
-    // For simplicity I hard-coded this! I'm taking
-    // the first and the last object (the origin)
-    // and destination and adding them separately to
-    // better style them. There is probably a better
-    // way to do this!
-    var originANDdestination = [featuresdata[0], featuresdata[17]];
-
     // this puts stuff on the map!
     reset();
     transition();
@@ -225,7 +230,7 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
                 d3.select('#' + animId).remove();
             })
             .each("end", function () {
-                //              d3.select(this).call(transition);// infinite loop
+                // d3.select(this).call(transition);// infinite loop
                 d3.select('#' + animId).remove();
             });
     } //end transition
@@ -274,6 +279,8 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
     // stroke and dash lengths
     function tweenDash() {
         return function (t) {
+			elapsedTime = t;
+			
             //total length of path (single value)
             var l = linePath.node().getTotalLength();
 
@@ -290,7 +297,7 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
             // the time then this would 25.
             var p = linePath.node().getPointAtLength(t * l);
 
-            if (index == 0) {
+            if (window.moveMap && index == 0) {
                 var g = map.layerPointToLatLng([p.x, p.y]);
                 map.panTo(g, { animate: false });
             }

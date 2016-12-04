@@ -12,7 +12,8 @@ var itineraryLanguage = 'EN';
 var routingProfile = 'carfast';
 var replaySpeed = 250;
 var responses = null;
-var doLoop = true;
+var doLoop = false;
+var moveMap = true;
 var scenario = 'xmas';
 
 var map = L.map('map', {
@@ -44,11 +45,19 @@ var attribution = '<a href="http://www.ptvgroup.com" target="_blank">PTV</a>, TO
 
 map.setView([0, 0], 0);
 
-var replay = function() {
+var play = function() {
     if ($('#replaySpeed option:selected').val())
         replaySpeed = $('#replaySpeed option:selected').val();
     doLoop = $('#doLoop').is(':checked');
     buildD3Animations(responses, replaySpeed, doLoop);
+}
+
+var setMoveMap = function() {
+    window.moveMap = $('#moveMap').is(':checked');
+}
+
+var stop = function() {
+	stopD3Animations();		
 }
 
 var getLayer = function(profile) {
@@ -107,6 +116,7 @@ $('#languageSelect').val(itineraryLanguage);
 $('#routingProfile').val(routingProfile);
 $('#replaySpeed').val(replaySpeed);
 $('#doLoop').attr("checked", doLoop);
+$('#moveMap').attr("checked", moveMap);
 $('#scenarioSelect').val(scenario);
 
 var sidebar = L.control.sidebar('sidebar').addTo(map);
@@ -270,7 +280,7 @@ var routingControl = L.Routing.control({
             }
             replaySpeed = responses[0].info.time / 40;
             $('#replaySpeed').val(replaySpeed);
-            replay();
+            play();
         }
     }),
     formatter: new L.Routing.Formatter({
