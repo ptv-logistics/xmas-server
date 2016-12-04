@@ -5,6 +5,7 @@
     <title>xmas-server</title>
 	<meta charset='utf-8' />
 	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='mobile-web-app-capable' content='yes'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <link rel="stylesheet" href="lib/leaflet-routing-machine.css" />
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="lib/leaflet-sidebar.min.css" />
     <link rel="stylesheet" href="lib/leaflet.contextmenu.css">
     <link rel="stylesheet" href="index.css" />
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         body {
@@ -92,6 +94,7 @@
         <!-- Nav tabs -->
         <ul class="sidebar-tabs" role="tablist">
             <li><a href="#home" role="tab"><i class="fa fa-flag"></i></a></li>
+            <li><a href="#play" role="tab"><i class="fa fa-play"></i></a></li>
             <li><a href="#about" role="tab"><i class="fa fa-info"></i></a></li>
         </ul>
         <!-- Tab panes -->
@@ -167,9 +170,12 @@
                     </div>
                     <div><input type="checkbox" id="dynamicTimeOnStaticRoute" onchange="updateParams(false)">Show static Route /w dynamic Time</div>
                     <div><input type="checkbox" id="staticTimeOnStaticRoute" onchange="updateParams(false)">Show static Route</div>
+                </div>
+            </div>
+            <div class="sidebar-pane" id="play">
                     <div style="margin: 10px 0px 10px 0px;">
                         Replay Speed
-                        <select id="replaySpeed" onchange="replay()">
+                        <select id="replaySpeed" onchange="play()">
                             <option>1</option>
                             <option>2.5</option>
                             <option>5</option>
@@ -186,10 +192,15 @@
                         </select>
                     </div>
                     <div>
-                        <button onclick="replay()">Replay</button>
-                        <input type="checkbox" id="doLoop" onchange="replay()">Loop
+                    <p>
+                        <input type="checkbox" id="doLoop" onchange="play()">Loop
+                        <input type="checkbox" id="moveMap" onchange="setMoveMap()">Move Map
+                    </p>
+                    <p>
+                        <button onclick="stop()">Stop</button>
+                        <button onclick="play()">Play</button>
+                    </p>
                     </div>
-                </div>
             </div>
             <div class="sidebar-pane" id="about">
                 <div>
