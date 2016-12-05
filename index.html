@@ -260,8 +260,15 @@
     <script src="./index.js"></script>
     <script>
        var params={};
-       location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v})
+       location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
+       
        document.getElementById('doLoop').checked = (params.loop === 'true');
+       
+       var z = parseInt(params.routeZoom);
+       
+       if (!isNaN(z)) {
+         routeZoom = z;
+       }
     </script>
 </body>
 </html>

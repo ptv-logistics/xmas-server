@@ -168,7 +168,13 @@ var updateScenario = function() {
             L.latLng(49.01328, 8.42806)
         ]);
 
-    routingControl.route();
+    routingControl.route({
+       callback: function() {
+         if (typeof routeZoom === 'number') {
+            map.setZoom(routeZoom);
+         }
+       }
+    });
 }
 
 var updateParams = function(refreshFeatureLayer, setTimeNow) {
