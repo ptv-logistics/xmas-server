@@ -167,14 +167,7 @@ var updateScenario = function() {
             L.latLng(49.01502, 8.37922),
             L.latLng(49.01328, 8.42806)
         ]);
-
-    routingControl.route({
-       callback: function() {
-         if (typeof routeZoom === 'number') {
-            map.setZoom(routeZoom);
-         }
-       }
-    });
+    routingControl.route();
 }
 
 var updateParams = function(refreshFeatureLayer, setTimeNow) {
@@ -301,6 +294,12 @@ routingControl.hide();
 
 routingControl.on('routingerror', function(e) {
     alert(e.error.responseJSON.errorMessage);
+});
+
+routingControl.on('routeselected', function() { 
+    if (typeof routeZoom === 'number' && !isNaN(routeZoom)) {
+       map.setZoom(routeZoom);
+    }
 });
 
 var BigPointLayer = L.CanvasLayer.extend({
