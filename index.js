@@ -12,7 +12,7 @@ var itineraryLanguage = 'EN';
 var routingProfile = 'carfast';
 var replaySpeed = 250;
 var responses = null;
-var doLoop = false;
+var doLoop = true;
 var moveMap = true;
 var scenario = 'xmas';
 
@@ -40,6 +40,8 @@ var map = L.map('map', {
     }]
 });
 
+if(!routeZoom)
+    routeZoom = 10;
 
 var attribution = '<a href="http://www.ptvgroup.com" target="_blank">PTV</a>, TOMTOM';
 
@@ -61,13 +63,15 @@ var stop = function() {
 }
 
 var getLayer = function(profile) {
-    return L.tileLayer('http://s0{s}-xserver2-dev.cloud.ptvgroup.com/services/rest/XMap/tile/{z}/{x}/{y}/' +
-        profile + '?xtok=' + token, {
+    return L.tileLayer('https://s0{s}-xserver2-europe-test.cloud.ptvgroup.com/services/rest/XMap/tile/{z}/{x}/{y}?storedProfile={profile}'
+        + '&xtok={token}', {
             attribution: '<a href="http://www.ptvgroup.com">PTV</a>, TOMTOM',
             maxZoom: 18,
             subdomains: '1234',
             unloadInvisibleTiles: true,
-            updateWhenIdle: false
+            updateWhenIdle: false,
+            profile: profile,
+            token: token
         });
 }
 
@@ -98,7 +102,7 @@ layer = vectormaps.vectorTileLayer(
     }, overlayLayer);
 var vectorDefault = L.layerGroup([layer, overlayLayer]);
 
-var rasterLayer = getLayer("silkysand");
+var rasterLayer = getLayer("gravelpit");
 
 new L.Control.Zoom({
     position: 'bottomleft'
