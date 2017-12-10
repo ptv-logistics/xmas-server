@@ -314,7 +314,7 @@ routingControl.on('routeselected', function () {
 
 var BigPointLayer = L.CanvasLayer.extend({
     particles: [],
-    mp: 200, //max particles
+    mp: 400, //max particles
     start: 0,
     onAdd: function (map) {
         L.CanvasLayer.prototype.onAdd.call(this, map);
