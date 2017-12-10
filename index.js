@@ -314,7 +314,7 @@ routingControl.on('routeselected', function () {
 
 var BigPointLayer = L.CanvasLayer.extend({
     particles: [],
-    mp: 400, //max particles
+    mp: 200, //max particles
     start: 0,
     onAdd: function (map) {
         L.CanvasLayer.prototype.onAdd.call(this, map);
@@ -355,7 +355,7 @@ var BigPointLayer = L.CanvasLayer.extend({
             var p = this.particles[i];
             var grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
             grd.addColorStop(0, "rgb(255, 255, 255)");
-            grd.addColorStop(0.5, "rgb(264, 246, 255)");
+            grd.addColorStop(0.7, "rgb(264, 246, 255)");
             grd.addColorStop(1, "rgb(80, 80, 128");
             ctx.beginPath();
             ctx.fillStyle = grd;
