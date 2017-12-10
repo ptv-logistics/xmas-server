@@ -15,15 +15,16 @@ var responses = null;
 var doLoop = true;
 var moveMap = true;
 var scenario = 'xmas';
+var routeZoom = 10;
 
 var map = L.map('map', {
     zoomControl: false,
     contextmenu: true,
-    contextmenuWidth: 200,
+    contextmenuWidth: 100,
     maxZoom: 18,
     contextmenuItems: [{
         text: 'Add Waypoint At Start',
-        callback: function(ev) {
+        callback: function (ev) {
             if (routingControl._plan._waypoints[0].latLng)
                 routingControl.spliceWaypoints(0, 0, ev.latlng);
             else
@@ -31,7 +32,7 @@ var map = L.map('map', {
         }
     }, {
         text: 'Add Waypoint At End',
-        callback: function(ev) {
+        callback: function (ev) {
             if (routingControl._plan._waypoints[routingControl._plan._waypoints.length - 1].latLng)
                 routingControl.spliceWaypoints(routingControl._plan._waypoints.length, 0, ev.latlng);
             else
@@ -40,31 +41,37 @@ var map = L.map('map', {
     }]
 });
 
-if(!routeZoom)
-    routeZoom = 10;
+var params = {};
+location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (s, k, v) {
+    params[k] = v
+});
+
+rz = parseInt(params.routeZoom);
+if (rz)
+    routeZoom = rz;
 
 var attribution = '<a href="http://www.ptvgroup.com" target="_blank">PTV</a>, TOMTOM';
 
 map.setView([0, 0], 0);
 
-var play = function() {
+var play = function () {
     if ($('#replaySpeed option:selected').val())
         replaySpeed = $('#replaySpeed option:selected').val();
     doLoop = $('#doLoop').is(':checked');
     buildD3Animations(responses, replaySpeed, doLoop);
-}
+};
 
-var setMoveMap = function() {
+var setMoveMap = function () {
     window.moveMap = $('#moveMap').is(':checked');
+};
+
+var stop = function () {
+    stopD3Animations();
 }
 
-var stop = function() {
-	stopD3Animations();		
-}
-
-var getLayer = function(profile) {
-    return L.tileLayer('https://s0{s}-xserver2-europe-test.cloud.ptvgroup.com/services/rest/XMap/tile/{z}/{x}/{y}?storedProfile={profile}'
-        + '&xtok={token}', {
+var getLayer = function (profile) {
+    return L.tileLayer('https://s0{s}-xserver2-europe-test.cloud.ptvgroup.com/services/rest/XMap/tile/{z}/{x}/{y}?storedProfile={profile}' +
+        '&xtok={token}', {
             attribution: '<a href="http://www.ptvgroup.com">PTV</a>, TOMTOM',
             maxZoom: 18,
             subdomains: '1234',
@@ -73,7 +80,7 @@ var getLayer = function(profile) {
             profile: profile,
             token: token
         });
-}
+};
 
 vectormaps.renderPTV.PARSE_COORDS_WORKER = "lib/vectormaps-worker.min.js";
 
@@ -128,7 +135,7 @@ var sidebar = L.control.sidebar('sidebar').addTo(map);
 
 fixClickPropagationForIE(sidebar._sidebar);
 
-var buildProfile = function() {
+var buildProfile = function () {
     var template = '<Profile xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><FeatureLayer majorVersion=\"1\" minorVersion=\"0\"><GlobalSettings enableTimeDependency=\"true\"/><Themes><Theme id=\"PTV_RestrictionZones\" enabled=\"{enableRestrictionZones}\" priorityLevel=\"0\"></Theme><Theme id=\"PTV_SpeedPatterns\" enabled=\"{enableSpeedPatterns}\" priorityLevel=\"0\"/><Theme id=\"PTV_TrafficIncidents\" enabled=\"{enableTrafficIncidents}\" priorityLevel=\"0\"/><Theme id=\"PTV_TruckAttributes\" enabled=\"{enableTruckAttributes}\" priorityLevel=\"0\"/><Theme id=\"PTV_TimeZones\" enabled=\"true\" priorityLevel=\"0\"/></Themes></FeatureLayer><Routing majorVersion=\"2\" minorVersion=\"0\"><Course><AdditionalDataRules enabled=\"true\"/></Course></Routing></Profile>'
 
     template = template.replace("{enableRestrictionZones}", enableRestrictionZones);
@@ -139,12 +146,12 @@ var buildProfile = function() {
     return template;
 }
 
-var setNow = function() {
+var setNow = function () {
     $('#range').val(moment().format());
     updateParams(true);
 }
 
-var updateScenario = function() {
+var updateScenario = function () {
     scenario = $('#scenarioSelect option:selected').val();
 
 
@@ -174,7 +181,7 @@ var updateScenario = function() {
     routingControl.route();
 }
 
-var updateParams = function(refreshFeatureLayer, setTimeNow) {
+var updateParams = function (refreshFeatureLayer, setTimeNow) {
     if (setTimeNow)
         $('#range').val(moment().format());
 
@@ -200,7 +207,7 @@ var updateParams = function(refreshFeatureLayer, setTimeNow) {
 
 var routingControl = L.Routing.control({
     plan: L.Routing.plan([], {
-        createMarker: function(i, wp) {
+        createMarker: function (i, wp) {
             return L.marker(wp.latLng, {
                 draggable: true,
                 icon: wp.name ? new L.Icon.Label.Default({
@@ -236,7 +243,7 @@ var routingControl = L.Routing.control({
         serviceUrl: 'https://api-eu-test.cloud.ptvgroup.com/xroute/rs/XRoute/',
         token: token,
         numberOfAlternatives: ((dynamicTimeOnStaticRoute) ? 1 : 0) + ((staticTimeOnStaticRoute) ? 1 : 0),
-        beforeSend: function(request, currentResponses, idx) {
+        beforeSend: function (request, currentResponses, idx) {
             if (hour)
                 request.options.push({
                     parameter: "START_TIME",
@@ -245,9 +252,9 @@ var routingControl = L.Routing.control({
 
             if (idx == 1 && dynamicTimeOnStaticRoute) // alt is static route with dynamic time
                 request.options.push({
-                parameter: "DYNAMIC_TIME_ON_STATICROUTE",
-                value: true
-            });
+                    parameter: "DYNAMIC_TIME_ON_STATICROUTE",
+                    value: true
+                });
 
             request.options.push({
                 parameter: "ROUTE_LANGUAGE",
@@ -267,7 +274,7 @@ var routingControl = L.Routing.control({
 
             return request;
         },
-        routesCalculated: function(alts, r) {
+        routesCalculated: function (alts, r) {
             responses = r;
             alts[0].name = '<i style="background:yellow"></i>Dynamic Route';
             if (!dynamicTimeOnStaticRoute) {
@@ -296,21 +303,20 @@ var routingControl = L.Routing.control({
 
 routingControl.hide();
 
-routingControl.on('routingerror', function(e) {
+routingControl.on('routingerror', function (e) {
     alert(e.error.responseJSON.errorMessage);
 });
 
-routingControl.on('routeselected', function() { 
-    if (typeof routeZoom === 'number' && !isNaN(routeZoom)) {
-       map.setZoom(routeZoom);
-    }
+routingControl.on('routeselected', function () {
+    if (scenario === 'xmas' && routeZoom)
+        map.setZoom(routeZoom);
 });
 
 var BigPointLayer = L.CanvasLayer.extend({
     particles: [],
-    mp: 100, //max particles
+    mp: 400, //max particles
     start: 0,
-    onAdd: function(map) {
+    onAdd: function (map) {
         L.CanvasLayer.prototype.onAdd.call(this, map);
 
         var canvas = this.getCanvas();
@@ -330,8 +336,8 @@ var BigPointLayer = L.CanvasLayer.extend({
 
     lProgress: 0,
 
-    render: function(timestamp) {
-        if (this.start == 0) this.start = timestamp;
+    render: function (timestamp) {
+        if (this.start === 0) this.start = timestamp;
         var progress = timestamp - this.start;
         var dProgress = progress - this.lProgress;
         this.lProgress = progress;
@@ -344,33 +350,27 @@ var BigPointLayer = L.CanvasLayer.extend({
         // clear canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-		// rendering strokes is too slow, so render a black and a smaller white circle
-        ctx.fillStyle = "rgba(64, 64, 64, 255)";
         ctx.beginPath();
-        for (var i = 0; i < this.mp; i++) {
+        for (i = 0; i < this.mp; i++) {
             var p = this.particles[i];
-            ctx.moveTo(p.x, p.y);
-            ctx.arc(p.x, p.y, p.r + 1, 0, Math.PI * 2, true);
+            var grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
+            grd.addColorStop(0, "rgba(255, 255, 255, 0.8)");
+            grd.addColorStop(0.7, "rgba(264, 246, 255, 0.8)");
+            grd.addColorStop(1, "rgba(64, 64, 128, 0.8)");
+            grd.addColorStop(1, 'transparent')
+            ctx.beginPath();
+            ctx.fillStyle = grd;
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, false);
+            ctx.fill('evenodd');
         }
-        ctx.fill();
-
-        ctx.fillStyle = "rgba(255, 255, 255, 255)";
-        ctx.beginPath();
-        for (var i = 0; i < this.mp; i++) {
-            var p = this.particles[i];
-            ctx.moveTo(p.x, p.y);
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
-        }
-        ctx.fill();
-
 
         this._render();
     },
 
     //Function to move the snowflakes
     //angle will be an ongoing incremental flag. Sin and Cos functions will be 
-	//applied to it to create vertical and horizontal movements of the flakes
-    xupdate: function(progress, dProgress) {
+    //applied to it to create vertical and horizontal movements of the flakes
+    xupdate: function (progress, dProgress) {
 
         var angle = progress / 1000;
         var d = dProgress / 20;

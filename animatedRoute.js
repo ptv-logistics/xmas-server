@@ -11,17 +11,16 @@ var buildD3Animations = function (alts, replaySpeed, doLoop) {
         d3Layer[0] = new L.SvgLayer({ pointerEvents: 'none', pane: map._panes.svgPane }).addTo(map);
         d3Layer[1] = new L.SvgLayer({ pointerEvents: 'none', pane: map._panes.svgPane }).addTo(map);
 
-        // setTimeout(function () { alert("Hello"); }, 3000);
-
         map.d3Layer = d3Layer;
     }
     else
         d3Layer = map.d3Layer;
 
-    // cancel pending animations
+    // cancel pending animations + marker
     for (var i = 0; i < 3; i++) {
         var animId = "anim" + i;
-        d3.select('#tr' + animId).transition().duration(0);
+        d3.select('#tr' + animId).transition().duration(0);        
+        d3.select('#marker' + i).remove();        
     }
 
     if (map.timeOut) {
@@ -278,14 +277,14 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
     // this function feeds the attrTween operator above with the
     // stroke and dash lengths
     function tweenDash() {
-        return function (t) {
-			elapsedTime = t;
+        return function (rt) {
+			elapsedTime = rt;
 			
             //total length of path (single value)
             var l = linePath.node().getTotalLength();
 
             // the relatibe time
-            var rTime = t * sumTime;
+            var rTime = rt * sumTime;
 
             var t = getRelTimeOnSegment(route, rTime);
 
@@ -297,7 +296,7 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
             // the time then this would 25.
             var p = linePath.node().getPointAtLength(t * l);
 
-            if (window.moveMap && index == 0) {
+            if (window.moveMap && index === 0) {
                 var g = map.layerPointToLatLng([p.x, p.y]);
                 map.panTo(g, { animate: false });
             }
