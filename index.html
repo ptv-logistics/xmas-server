@@ -1,12 +1,31 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>xmas-server</title>
-	<meta charset='utf-8' />
-	<meta name='apple-mobile-web-app-capable' content='yes' />
-	<meta name='mobile-web-app-capable' content='yes'>
-	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
+    <meta name="description" content="Festive xServer Routing">
+    <meta name="author" content="PTV Group">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="xServer.js">
+    <meta itemprop="description" content="Festive xServer Routing">
+    <meta itemprop="image" content="https://ptv-logistics.github.io/xmas-server/images/thumbnail.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="xmas-server" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="Festive xServer Routing" />
+    <meta property="og:image" content="https://ptv-logistics.github.io/xmas-server/images/thumbnail.png" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:description" content="Festive xServer Routing" />
+
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='mobile-web-app-capable' content='yes'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <link rel="stylesheet" href="lib/leaflet-routing-machine.css" />
     <link rel="stylesheet" href="lib/leaflet.iconlabel.css" />
@@ -14,7 +33,7 @@
     <link rel="stylesheet" href="lib/leaflet-sidebar.min.css" />
     <link rel="stylesheet" href="lib/leaflet.contextmenu.css">
     <link rel="stylesheet" href="index.css" />
-	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         body {
@@ -22,11 +41,12 @@
             margin: 0;
         }
 
-        html, body, #map {
+        html,
+        body,
+        #map {
             height: 100%;
             font: 10pt "Helvetica Neue", Arial, Helvetica, sans-serif;
         }
-
         /*h1, p {
             margin-top: 3em;
         }
@@ -76,14 +96,13 @@
             margin-right: 8px;
             opacity: 0.7;
         }
-		
-		.leaflet-container {
-			background: #eef;
-		}
-		
-		
+
+        .leaflet-container {
+            background: #eef;
+        }
     </style>
 </head>
+
 <body>
     <div class="github-fork-ribbon-wrapper right-bottom">
         <div class="github-fork-ribbon">
@@ -93,9 +112,21 @@
     <div id="sidebar" class="sidebar collapsed">
         <!-- Nav tabs -->
         <ul class="sidebar-tabs" role="tablist">
-            <li><a href="#home" role="tab"><i class="fa fa-flag"></i></a></li>
-            <li><a href="#play" role="tab"><i class="fa fa-play"></i></a></li>
-            <li><a href="#about" role="tab"><i class="fa fa-info"></i></a></li>
+            <li>
+                <a href="#home" role="tab">
+                    <i class="fa fa-flag"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#play" role="tab">
+                    <i class="fa fa-play"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#about" role="tab">
+                    <i class="fa fa-info"></i>
+                </a>
+            </li>
         </ul>
         <!-- Tab panes -->
         <div class="sidebar-content active">
@@ -104,8 +135,7 @@
                     PTV xMas Server
                 </h2>
                 <h3>
-                    You can change the waypoints by dragging them on the map or entering
-                    an address at the address input field.
+                    You can change the waypoints by dragging them on the map or entering an address at the address input field.
                 </h3>
                 <div>
                     <p>
@@ -119,10 +149,14 @@
                     </p>
                     <div style="margin: 10px 0px 10px 0px;">
                         <div>Consider layers for routing:</div>
-                        <div><input type="checkbox" id="enableTrafficIncidents" onchange="updateParams(false, true)">Traffic Incidents</div>
-                        <div><input type="checkbox" id="enableSpeedPatterns" onchange="updateParams(false)">Speed Patterns</div>
-                        <div><input type="checkbox" id="enableTruckAttributes" onchange="updateParams(false)">Truck Attributes</div>
-                        <div><input type="checkbox" id="enableRestrictionZones" onchange="updateParams(false)">Restriction Zones</div>
+                        <div>
+                            <input type="checkbox" id="enableTrafficIncidents" onchange="updateParams(false, true)">Traffic Incidents</div>
+                        <div>
+                            <input type="checkbox" id="enableSpeedPatterns" onchange="updateParams(false)">Speed Patterns</div>
+                        <div>
+                            <input type="checkbox" id="enableTruckAttributes" onchange="updateParams(false)">Truck Attributes</div>
+                        <div>
+                            <input type="checkbox" id="enableRestrictionZones" onchange="updateParams(false)">Restriction Zones</div>
                     </div>
                     <div style="margin: 10px 0px 10px 0px;">
                         <div>Select time of day</div>
@@ -168,30 +202,32 @@
                             <option>PT</option>
                         </select>
                     </div>
-                    <div><input type="checkbox" id="dynamicTimeOnStaticRoute" onchange="updateParams(false)">Show static Route /w dynamic Time</div>
-                    <div><input type="checkbox" id="staticTimeOnStaticRoute" onchange="updateParams(false)">Show static Route</div>
+                    <div>
+                        <input type="checkbox" id="dynamicTimeOnStaticRoute" onchange="updateParams(false)">Show static Route /w dynamic Time</div>
+                    <div>
+                        <input type="checkbox" id="staticTimeOnStaticRoute" onchange="updateParams(false)">Show static Route</div>
                 </div>
             </div>
             <div class="sidebar-pane" id="play">
-                    <div style="margin: 10px 0px 10px 0px;">
-                        Replay Speed
-                        <select id="replaySpeed" onchange="play()">
-                            <option>1</option>
-                            <option>2.5</option>
-                            <option>5</option>
-                            <option>10</option>
-                            <option>25</option>
-                            <option>50</option>
-                            <option>100</option>
-                            <option>250</option>
-                            <option>500</option>
-                            <option>1000</option>
-                            <option>2500</option>
-                            <option>5000</option>
-                            <option>10000</option>
-                        </select>
-                    </div>
-                    <div>
+                <div style="margin: 10px 0px 10px 0px;">
+                    Replay Speed
+                    <select id="replaySpeed" onchange="play()">
+                        <option>1</option>
+                        <option>2.5</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>25</option>
+                        <option>50</option>
+                        <option>100</option>
+                        <option>250</option>
+                        <option>500</option>
+                        <option>1000</option>
+                        <option>2500</option>
+                        <option>5000</option>
+                        <option>10000</option>
+                    </select>
+                </div>
+                <div>
                     <p>
                         <input type="checkbox" id="doLoop" onchange="play()">Loop
                         <input type="checkbox" id="moveMap" onchange="setMoveMap()">Move Map
@@ -200,7 +236,7 @@
                         <button onclick="stop()">Stop</button>
                         <button onclick="play()">Play</button>
                     </p>
-                    </div>
+                </div>
             </div>
             <div class="sidebar-pane" id="about">
                 <div>
@@ -209,25 +245,33 @@
                     </p>
                     <p>
                         <div>
-                            <a href="http://xserver.ptvgroup.com/de/produkte/ptv-xserver-internet/"><img src="./images/xserver.png"></a>
+                            <a href="http://xserver.ptvgroup.com/de/produkte/ptv-xserver-internet/">
+                                <img src="./images/xserver.png">
+                            </a>
                             <h3>PTV xServer internet</h3>
                         </div>
                     </p>
                     <p>
                         <div>
-                            <a href="http://leafletjs.com/"><img src="./images/leaflet.png"></a>
+                            <a href="http://leafletjs.com/">
+                                <img src="./images/leaflet.png">
+                            </a>
                             <h3>Leaflet</h3>
                         </div>
                     </p>
                     <p>
                         <div>
-                            <a href="http://www.liedman.net/leaflet-routing-machine/"><img src="./images/lrm.svg"></a>
+                            <a href="http://www.liedman.net/leaflet-routing-machine/">
+                                <img src="./images/lrm.svg">
+                            </a>
                             <h3>Leaflet Routing Machine</h3>
                         </div>
                     </p>
                     <p>
                         <div>
-                            <a href="http://d3js.org"><img src="./images/d3.svg"></a>
+                            <a href="http://d3js.org">
+                                <img src="./images/d3.svg">
+                            </a>
                             <h3>Data Driven Documents</h3>
                         </div>
                     </p>
@@ -256,4 +300,5 @@
     <script src="./tools.js"></script>
     <script src="./index.js"></script>
 </body>
+
 </html>
