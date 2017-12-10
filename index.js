@@ -354,10 +354,9 @@ var BigPointLayer = L.CanvasLayer.extend({
         for (i = 0; i < this.mp; i++) {
             var p = this.particles[i];
             var grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
-            grd.addColorStop(0, "rgba(255, 255, 255, 0.8)");
-            grd.addColorStop(0.7, "rgba(264, 246, 255, 0.8)");
-            grd.addColorStop(1, "rgba(64, 64, 128, 0.8)");
-            grd.addColorStop(1, 'transparent')
+            grd.addColorStop(0, "rgb(255, 255, 255)");
+            grd.addColorStop(0.5, "rgb(264, 246, 255)");
+            grd.addColorStop(1, "rgb(80, 80, 128");
             ctx.beginPath();
             ctx.fillStyle = grd;
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, false);
