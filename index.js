@@ -223,21 +223,33 @@ var routingControl = L.Routing.control({
         }),
         reverseWaypoints: true
     }),
-    altLineOptions: {
-        styles: [{
-            color: 'black',
-            opacity: 0.15,
-            weight: 9
-        }, {
-            color: 'white',
-            opacity: 0.8,
-            weight: 6
-        }, {
-            color: 'blue',
-            opacity: 0.5,
-            weight: 2
-        }],
-    },
+	lineOptions: {
+            styles: [{
+                color: '#1A3112',
+                opacity: 1,
+				weight: 11
+			},
+			// Center
+			{
+				color: '#C5A436',
+                opacity: 1,
+				weight: 4
+			}
+		]
+	},
+	altLineOptions: {
+		styles: [{
+				color: '#1A3112',
+                opacity: 1,
+				weight: 11
+			},
+			{
+				color: '#992114',
+                opacity: 1,
+				weight: 4
+			}
+		],
+	},
     showAlternatives: true,
     router: L.Routing.ptv({
         serviceUrl: 'https://api-eu-test.cloud.ptvgroup.com/xroute/rs/XRoute/',

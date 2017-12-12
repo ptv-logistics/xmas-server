@@ -73,7 +73,7 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
 
     var sumTime = route.segments[route.segments.length - 1].accTime;
     var sumDist = route.segments[route.segments.length - 1].accDist;
-    var santaSize = 80;
+    var santaSize = 10;
 
     var animId = "anim" + index;
 
@@ -319,10 +319,13 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
             var deg = Math.acos(ort) / Math.PI * 180.0;
             deg = Math.atan2(p1.y - p0.y, p1.x - p0.x) / Math.PI * 180.0
 
+            var scaledSize = santaSize * map.getZoom();
+            marker.attr("width", scaledSize);
+            marker.attr("height", scaledSize);
             //var dotp = p0.x * p.x - p0.y * p.y;
             //var angle = Math.acos(dotp)
 
-            var offset = santaSize / 2;
+            var offset = scaledSize / 2;
             //Move the marker to that point
             //if ((deg < 0 && deg > -90) || (deg > -180 && deg > -90))
             //    marker.attr("transform", "translate(" + (p.x) + "," + (p.y) + ") scale(1,-1) rotate(" + (180 - deg) + ") translate(-" + offset + ", -" + offset * 1.5 + ")"); //move marker
