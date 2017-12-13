@@ -15,7 +15,7 @@ var responses = null;
 var doLoop = true;
 var moveMap = true;
 var scenario = 'xmas';
-var routeZoom = 10;
+var routeZoom = 9;
 
 var map = L.map('map', {
     zoomControl: false,
@@ -326,7 +326,7 @@ routingControl.on('routeselected', function () {
 
 var BigPointLayer = L.CanvasLayer.extend({
     particles: [],
-    mp: 400, //max particles
+    mp: 150, //max particles
     start: 0,
     onAdd: function (map) {
         L.CanvasLayer.prototype.onAdd.call(this, map);

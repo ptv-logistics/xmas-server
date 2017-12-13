@@ -16,7 +16,7 @@
     <!-- Open Graph data -->
     <meta property="og:title" content="xmas-server" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="Festive xServer Routing" />
+    <meta property="og:url" content="https://ptv-logistics.github.io/xmas-server" />
     <meta property="og:image" content="https://ptv-logistics.github.io/xmas-server/images/thumbnail.jpg" />
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="600" />
@@ -104,6 +104,10 @@
 </head>
 
 <body>
+    <link itemprop="thumbnailUrl" href="https://ptv-logistics.github.io/xmas-server/images/thumbnail.jpg"> 
+    <span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject"> 
+      <link itemprop="url" href="https://ptv-logistics.github.io/xmas-server/images/thumbnail.jpg"> 
+    </span>
     <div class="github-fork-ribbon-wrapper right-bottom">
         <div class="github-fork-ribbon">
             <a href="https://github.com/ptv-logistics/xmas-server/" target="_blank">Fork me on GitHub</a>
@@ -142,9 +146,9 @@
                         <label for="scenarioSelect">Sample Route</label>
                         <select id="scenarioSelect" onchange="updateScenario()">
                             <option>xmas</option>
+                            <option>New York</option>
                             <option>Paris</option>
                             <option>Karlsruhe</option>
-                            <option>New York</option>
                         </select>
                     </p>
                     <div style="margin: 10px 0px 10px 0px;">
