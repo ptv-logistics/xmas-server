@@ -264,8 +264,8 @@ var buildD3Animation = function (route, index, layer, svg, replaySpeed) {
         var i = binaryIndexOf(route.segments, rTime);
 
         // get the relative distance 
-        var xt = (i == 0) ? 0 : route.segments[i - 1].accTime;
-        var xd = (i == 0) ? 0 : route.segments[i - 1].accDist;
+        var xt = (i === 0) ? 0 : route.segments[i - 1].accTime;
+        var xd = (i === 0) ? 0 : route.segments[i - 1].accDist;
         var dt = rTime - xt;
         var at = route.segments[i].accTime - xt;
         var rt = dt / at;
