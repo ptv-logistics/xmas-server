@@ -109,7 +109,8 @@ layer = vectormaps.vectorTileLayer(
     }, overlayLayer);
 var vectorDefault = L.layerGroup([layer, overlayLayer]);
 
-var rasterLayer = getLayer("gravelpit");
+var rasterDark = getLayer("blackmarble");
+var rasterLight = getLayer("silica");
 
 new L.Control.Zoom({
     position: 'bottomleft'
@@ -442,7 +443,8 @@ var BigPointLayer = L.CanvasLayer.extend({
 var snowLayer = new BigPointLayer().addTo(map);
 
 var baseLayers = {
-    "Raster": rasterLayer,
+    "Raster (Dark)": rasterDark,
+    "Raster (Light)": rasterLight,
     "Vector (Winter)": vectorWinter,
     "Vector (Default)": vectorDefault
 };
