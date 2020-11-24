@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@1.4.3/Control.FullScreen.css" />
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         body {
             padding: 0;
@@ -101,6 +101,10 @@
 
         .leaflet-container {
             background: #eef;
+        }
+
+        div.leaflet-routing-geocoders input {
+            width: calc(100% - 6px); /* fixes wrong line-break in chrome */
         }
     </style>
 </head>
