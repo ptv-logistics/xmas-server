@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="lib/forkme.css" />
     <link rel="stylesheet" href="lib/leaflet-sidebar.min.css" />
     <link rel="stylesheet" href="lib/leaflet.contextmenu.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@1.4.3/Control.FullScreen.css" />
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -43,6 +44,7 @@
 
         html,
         body,
+        #map-container,
         #map {
             height: 100%;
             font: 10pt "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -113,6 +115,7 @@
             <a href="https://github.com/ptv-logistics/xmas-server/" target="_blank">Fork me on GitHub</a>
         </div>
     </div>
+    <div id="map-container">
     <div id="sidebar" class="sidebar collapsed">
         <!-- Nav tabs -->
         <ul class="sidebar-tabs" role="tablist">
@@ -284,10 +287,10 @@
         </div>
     </div>
     <div id="map" class="sidebar-map"></div>
+    </div>
     <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="http://xvector.westeurope.cloudapp.azure.com/vectormaps/vectormaps-core.js"></script>
-    <script src="lib/vectormaps-leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.fullscreen@1.4.3/Control.FullScreen.js"></script>
     <script src="lib/leaflet_canvas_layer.js"></script>
     <script src="lib/d3.min.js"></script>
     <script src="lib/leaflet-routing-machine.js"></script>
