@@ -22,6 +22,10 @@ var map = L.map('map', {
     contextmenu: true,
     contextmenuWidth: 100,
     maxZoom: 18,
+	fullscreenControl: true,
+	fullscreenControlOptions: {
+		fullscreenElement: document.getElementById('map-container').parentNode // needed for sidebar!
+	},
     contextmenuItems: [{
         text: 'Add Waypoint At Start',
         callback: function (ev) {
@@ -82,34 +86,7 @@ var getLayer = function (profile) {
         });
 };
 
-vectormaps.renderPTV.PARSE_COORDS_WORKER = "lib/vectormaps-worker.min.js";
-
-// add PTV tile and label (overlay) layers
-var overlayLayer = vectormaps.overlayLayer({
-    updateWhenIdle: false,
-    unloadInvisibleTiles: true
-});
-var layer = vectormaps.vectorTileLayer(
-    'http://xvector.westeurope.cloudapp.azure.com/vectormaps/vectormaps/', {
-        stylesUrl: 'styles/styles-winter.json',
-        updateWhenIdle: false,
-        unloadInvisibleTiles: true
-    }, overlayLayer);
-var vectorWinter = L.layerGroup([layer, overlayLayer]).addTo(map);
-
-overlayLayer = vectormaps.overlayLayer({
-    updateWhenIdle: false,
-    unloadInvisibleTiles: true
-});
-layer = vectormaps.vectorTileLayer(
-    'http://xvector.westeurope.cloudapp.azure.com/vectormaps/vectormaps/', {
-        stylesUrl: 'styles/styles-default.json',
-        updateWhenIdle: false,
-        unloadInvisibleTiles: true
-    }, overlayLayer);
-var vectorDefault = L.layerGroup([layer, overlayLayer]);
-
-var rasterDark = getLayer("blackmarble");
+var rasterDark = getLayer("blackmarble").addTo(map);
 var rasterLight = getLayer("silica");
 
 new L.Control.Zoom({
@@ -444,9 +421,7 @@ var snowLayer = new BigPointLayer().addTo(map);
 
 var baseLayers = {
     "Raster (Dark)": rasterDark,
-    "Raster (Light)": rasterLight,
-    "Vector (Winter)": vectorWinter,
-    "Vector (Default)": vectorDefault
+    "Raster (Light)": rasterLight
 };
 
 var overlays = {
