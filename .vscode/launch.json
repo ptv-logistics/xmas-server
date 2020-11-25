@@ -4,8 +4,11 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost/xmas-server/index.html",
+            "name": "Launch Chrome against local file",
+            "runtimeArgs": [
+                "--allow-file-access-from-files"
+            ],
+            "url": "${workspaceRoot}/index.html",
             "sourceMaps": false
           }    
     ]
