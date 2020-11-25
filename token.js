@@ -1,3 +1,3 @@
 // The token below is for internal use only - consider getting your own token!
 // This token is valid until 2017-01-13T17:02:54Z and was auto-generated @ 2016-11-09T22:48:29Z.
-var token = '';
+var token = '4200E53D-9491-4A2A-83A7-8B3E8C102F6F';
