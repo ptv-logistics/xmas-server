@@ -54,7 +54,7 @@ rz = parseInt(params.routeZoom);
 if (rz)
     routeZoom = rz;
 
-var attribution = '<a href="http://www.ptvgroup.com" target="_blank">PTV</a>, TOMTOM';
+var attribution = '<a href="http://www.ptvgroup.com" target="_blank">PTV</a>, HERE';
 
 map.setView([0, 0], 0);
 
