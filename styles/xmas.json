@@ -1,0 +1,2139 @@
+{
+  "version": 8,
+  "name": "Standard",
+  "metadata": {"maputnik:renderer": "mbgljs"},
+  "pitch": 0,
+  "sources": {
+    "ptv": {
+      "type": "vector",
+      "tiles": [
+        "https://api.myptv.com/maps/v1/vector-tiles/{z}/{x}/{y}?apiKey=YjA2OGIzOGMxMjdiNGZkOGIwYTMwNmI0OGE4Y2ZiMTc6Y2QwZjUyMDYtMTk2Ni00N2NlLWFmNTYtNzBjOWZjZTgxNzJh"
+      ],
+      "minZoom": 0,
+      "maxzoom": 17
+    }
+  },
+  "sprite": "https://vectormaps-resources.myptv.com/icons/latest/sprite",
+  "glyphs": "https://vectormaps-resources.myptv.com/fonts/latest/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "BKG_Background",
+      "type": "background",
+      "maxzoom": 24,
+      "filter": ["all"],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "background-color": {
+          "stops": [
+            [4, "rgba(13, 126, 24, 1)"],
+            [6, "rgba(30, 157, 30, 1)"],
+            [10, "rgba(79, 176, 81, 1)"]
+          ]
+        }
+      }
+    },
+    {
+      "id": "BKG_Ocean",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "filter": ["all", ["==", "feature_type", 500116]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "rgba(18, 33, 105, 1)"}
+    },
+    {
+      "id": "BKG_BuiltupArea_DC_1",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 6,
+      "filter": [
+        "all",
+        ["==", "feature_type", 900156],
+        ["==", "display_class", 1]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": {
+          "stops": [[11, "rgba(113, 28, 28, 1)"], [12.2, "rgba(93, 19, 19, 1)"]]
+        }
+      }
+    },
+    {
+      "id": "BKG_BuiltupArea_DC_2",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        ["==", "feature_type", 900156],
+        ["==", "display_class", 2]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": {
+          "stops": [
+            [11, "rgba(140, 28, 28, 1)"],
+            [12.2, "rgba(107, 18, 18, 1)"]
+          ]
+        },
+        "fill-antialias": false
+      }
+    },
+    {
+      "id": "BKG_BuiltupArea_DC_3",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        ["==", "feature_type", 900156],
+        ["==", "display_class", 3]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-opacity": 1,
+        "fill-color": {
+          "stops": [
+            [11, "rgba(198, 89, 89, 1)"],
+            [12.2, "rgba(134, 53, 53, 1)"]
+          ]
+        }
+      }
+    },
+    {
+      "id": "BKG_BuiltupArea_DC_4",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 9,
+      "filter": [
+        "all",
+        ["==", "feature_type", 900156],
+        ["==", "display_class", 4]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": {
+          "stops": [
+            [11, "rgba(109, 67, 44, 1)"],
+            [12.2, "rgba(138, 84, 54, 1)"]
+          ]
+        },
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "BKG_BuiltupArea_DC_5",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "feature_type", 900156],
+        ["==", "display_class", 5]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": {
+          "stops": [
+            [11, "rgba(113, 76, 55, 1)"],
+            [12.2, "rgba(105, 70, 49, 1)"]
+          ]
+        },
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "BKG_WoodlandArea",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 5,
+      "maxzoom": 17,
+      "filter": ["all", ["==", "feature_type", 900202]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": {
+          "stops": [
+            [6, "rgba(58, 99, 47, 1)"],
+            [7, "rgba(42, 93, 23, 1)"],
+            [12, "rgba(45, 109, 44, 1)"]
+          ]
+        },
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "BKG_Park_State",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 6,
+      "maxzoom": 17,
+      "filter": ["all", ["==", "feature_type", 900130]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": {
+          "stops": [
+            [6, "rgba(94, 134, 66, 1)"],
+            [7, "rgba(83, 118, 60, 1)"],
+            [12, "rgba(67, 95, 48, 1)"]
+          ]
+        },
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "BKG_Park_National",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 6,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "feature_type", 900103]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": {
+          "stops": [
+            [6, "rgba(40, 142, 97, 1)"],
+            [7, "rgba(29, 118, 78, 1)"],
+            [12, "rgba(20, 89, 58, 1)"]
+          ]
+        },
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "BKG_Park_City",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 900150]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": {
+          "stops": [[6, "#F3EFED"], [7, "#F2EBE5"], [12, "#FFFFFF"]]
+        },
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "BKG_Animal_Park",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 2000461]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#FFFFFF",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Amusement_Park",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 2000460], ["==", "name", ""]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#FFFFFF",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Pedestrian_Zone",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 14,
+      "filter": ["all", ["==", "feature_type", 900158]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(215, 193, 231, 1)",
+        "fill-opacity": {"stops": [[14, 0], [14.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Bay",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 0,
+      "filter": ["all", ["==", "feature_type", 507116]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#122169", "fill-opacity": 1}
+    },
+    {
+      "id": "BKG_River",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 0,
+      "filter": ["all", ["==", "feature_type", 500412]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#122169"}
+    },
+    {
+      "id": "BKG_Allotment",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 900151]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#FFFFFF",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Airport",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 1900403]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#DADBE0",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Airport_Area",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 1907403]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#F9F9FA",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Industrial_Complex",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 2000200]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": {
+          "stops": [
+            [11, "rgba(91, 80, 76, 1)"],
+            [12.2, "rgba(132, 115, 110, 1)"]
+          ]
+        },
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "BKG_University_College",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 2000403]],
+      "paint": {
+        "fill-color": "#E0C1CB",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Shopping_Centre",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 2000124]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#C2C3CC",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Cemetery",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 2000420]],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "fill-color": "#E3EEE1",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Hospital",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 2000408]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(224, 193, 203, 1)",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Parking_Lot",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 1700215]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#F9F9FA",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Parking_Garage",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 1700216]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#C2C3CC",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Sports_Complex",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 2000457]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "#FFFFFF",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_Golf_Course",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 2000123]],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]},
+        "fill-color": "#FFFFFF"
+      }
+    },
+    {
+      "id": "BKG_Canal",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 0,
+      "filter": ["all", ["==", "feature_type", 500414]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#66CDE1", "fill-opacity": 1}
+    },
+    {
+      "id": "BKG_Beach",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 509998]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(255, 253, 190, 1)",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_RailwayLinear",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundLine",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 1800201]],
+      "layout": {
+        "line-join": "round",
+        "line-cap": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(140, 140, 140, 0.3)",
+        "line-width": {"base": 1.5, "stops": [[4, 0.5], [20, 10]]},
+        "line-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_RailwayLinearDash",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundLine",
+      "minzoom": 11,
+      "filter": ["all", ["==", "feature_type", 1800201]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-dasharray": [3, 3],
+        "line-width": {"base": 1.4, "stops": [[4, 0.5], [20, 10]]},
+        "line-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "BKG_WaterLinear",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundLine",
+      "minzoom": 0,
+      "filter": ["all", ["in", "feature_type", 500412, 500414]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "#66CDE1",
+        "line-opacity": 1,
+        "line-width": {"stops": [[14, 1], [16, 2], [18, 4]]}
+      }
+    },
+    {
+      "id": "BKG_Lake",
+      "type": "fill",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundPolygon",
+      "minzoom": 0,
+      "filter": ["all", ["==", "feature_type", 500421]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "#122169", "fill-opacity": 1}
+    },
+    {
+      "id": "TSP_RoadPath",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "display_class", 9]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-width": {"base": 1.55, "stops": [[4, 1], [20, 4]]},
+        "line-color": {
+          "stops": [[13, "#FFFFFF"], [14, "#DADBE0"], [15, "#C2C3CC"]]
+        },
+        "line-opacity": 1
+      }
+    },
+    {
+      "id": "TSP_RoadPath-dash",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "display_class", 9]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-width": {"base": 1.55, "stops": [[4, 1], [20, 4]]},
+        "line-color": "#FFFFFF",
+        "line-opacity": 1,
+        "line-dasharray": [2, 2]
+      }
+    },
+    {
+      "id": "TSP_RoadPedestrian",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 13,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "display_class", 8]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-width": {"base": 1.55, "stops": [[4, 0.5], [20, 30]]},
+        "line-color": "#EDEDF0",
+        "line-opacity": {"stops": [[13, 0], [13.5, 1]]}
+      }
+    },
+    {
+      "id": "TSP_RoadResidential",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 12,
+      "maxzoom": 24,
+      "filter": ["all", ["in", "display_class", 6, 7]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-width": {"base": 1.55, "stops": [[4, 0.5], [20, 10]]},
+        "line-color": "#EDEDF0",
+        "line-opacity": {"stops": [[12, 0], [12.5, 1]]}
+      }
+    },
+    {
+      "id": "TSP_RoadLocal_Inner",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 11,
+      "filter": ["all", ["==", "display_class", 5]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#EDEDF0",
+        "line-width": {
+          "base": 1.55,
+          "stops": [[10, 1], [12, 2], [14, 3], [16, 4], [18, 14]]
+        },
+        "line-opacity": {"stops": [[11, 0], [11.5, 1]]}
+      }
+    },
+    {
+      "id": "TSP_RoadArterial_Outer-grey",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 7,
+      "filter": ["all", ["==", "display_class", 4]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": {
+          "stops": [
+            [8, "#E2DCD8"],
+            [9, "#DADBE0"],
+            [10, "#DADBE0"],
+            [10.75, "#C2C3CC"],
+            [11, "#C2C3CC"],
+            [12, "#DADBE0"]
+          ]
+        },
+        "line-width": {
+          "base": 1.55,
+          "stops": [
+            [8, 1],
+            [9, 1],
+            [10, 2],
+            [11, 4],
+            [12, 6],
+            [14, 12],
+            [21, 34]
+          ]
+        },
+        "line-opacity": 1
+      }
+    },
+    {
+      "id": "TSP_RoadArterial_Inner-white",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 10,
+      "filter": ["all", ["==", "display_class", 4]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": {
+          "stops": [[10.5, "#DADBE0"], [11, "#F9F9FA"], [12, "#F1F1F4"]]
+        },
+        "line-width": {
+          "base": 1.55,
+          "stops": [[10, 1], [11, 2], [12, 3], [14, 8], [21, 32]]
+        },
+        "line-opacity": 1
+      }
+    },
+    {
+      "id": "TSP_RoadFederal_Outer-color",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 5,
+      "filter": ["all", ["in", "display_class", 2, 3]],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": {
+          "stops": [[5, "rgba(253, 250, 246, 1)"], [6, "rgba(255, 187, 68, 1)"]]
+        },
+        "line-width": {
+          "base": 1.4,
+          "stops": [
+            [6, 1],
+            [7, 2],
+            [8, 3],
+            [10, 4],
+            [12, 6],
+            [14, 12],
+            [21, 34]
+          ]
+        },
+        "line-opacity": 1
+      }
+    },
+    {
+      "id": "TSP_RoadFederal_Inner",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 7,
+      "filter": ["all", ["in", "display_class", 2, 3]],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": {
+          "stops": [
+            [7, "rgba(255, 187, 68, 1)"],
+            [8, "rgba(255, 231, 194, 1)"],
+            [11, "rgba(255, 231, 194, 1)"],
+            [12, "rgba(251, 235, 212, 1)"]
+          ]
+        },
+        "line-width": {
+          "base": 1.4,
+          "stops": [[8, 1], [10, 2], [12, 3], [14, 8], [21, 30]]
+        },
+        "line-opacity": 1
+      }
+    },
+    {
+      "id": "TSP_RoadHighway_Outer-color",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 4,
+      "filter": ["all", ["==", "display_class", 1]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": {
+          "stops": [[4, "rgba(243, 238, 233, 1)"], [5, "rgba(255, 163, 0, 1)"]]
+        },
+        "line-width": {
+          "base": 1.4,
+          "stops": [
+            [5, 1],
+            [6, 2],
+            [7, 3],
+            [8, 4],
+            [10, 6],
+            [12, 8],
+            [14, 14],
+            [21, 64]
+          ]
+        },
+        "line-opacity": 1
+      }
+    },
+    {
+      "id": "TSP_RoadHighway_Inner",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 7,
+      "filter": ["all", ["==", "display_class", 1]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": {
+          "stops": [[7, "rgba(255, 163, 0, 1)"], [8, "rgba(255, 203, 107, 1)"]]
+        },
+        "line-width": {
+          "base": 1.4,
+          "stops": [[6, 1], [8, 2], [10, 3], [12, 5], [14, 10], [21, 60]]
+        },
+        "line-opacity": 1
+      }
+    },
+    {
+      "id": "TSP_RoadFerry",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 7,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "display_class", 110]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-width": {"base": 1.55, "stops": [[4, 0.5], [20, 0.5]]},
+        "line-translate-anchor": "map",
+        "line-dasharray": [3, 3],
+        "line-opacity": 0.5,
+        "line-color": "#007890"
+      }
+    },
+    {
+      "id": "TSP_RoadOneWay_Label",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 16,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["in", "travel_direction", "F", "T"]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "oneway_arrow",
+        "icon-rotation-alignment": "auto",
+        "icon-rotate": [
+          "case",
+          ["==", ["get", "travel_direction"], "F"],
+          0,
+          ["==", ["get", "travel_direction"], "T"],
+          180,
+          0
+        ],
+        "icon-padding": 50,
+        "icon-size": 0.5,
+        "text-allow-overlap": false,
+        "icon-allow-overlap": false,
+        "icon-ignore-placement": true
+      }
+    },
+    {
+      "id": "BLD_Building",
+      "type": "fill-extrusion",
+      "source": "ptv",
+      "source-layer": "LayerBuilding",
+      "minzoom": 15,
+      "maxzoom": 24,
+      "filter": ["all", ["==", "$type", "Polygon"]],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "fill-extrusion-height": ["get", "height"],
+        "fill-extrusion-color": "rgba(255, 255, 255, 1)",
+        "fill-extrusion-translate-anchor": "map",
+        "fill-extrusion-opacity": 1,
+        "fill-extrusion-vertical-gradient": false
+      }
+    },
+    {
+      "id": "BKG_BorderCountryLinear_Outer",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundLine",
+      "filter": ["all", ["==", "feature_type", 908000]],
+      "layout": {"visibility": "none"},
+      "paint": {
+        "line-opacity": {"stops": [[6, 0.5], [10, 0.4]]},
+        "line-color": "rgba(88, 88, 88, 0.3)",
+        "line-width": {"stops": [[4, 4], [6, 8], [10, 8]]}
+      }
+    },
+    {
+      "id": "BKG_BorderCountryLinear_Inner",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundLine",
+      "filter": ["all", ["==", "feature_type", 908000]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": {"stops": [[4, "#AFAFB8"], [6, "#93939D"]]},
+        "line-width": {"stops": [[2, 1], [4, 2]]}
+      }
+    },
+    {
+      "id": "BKG_BorderFederalLinear",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerBackgroundLine",
+      "minzoom": 5,
+      "filter": ["all", ["==", "feature_type", 908001]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-opacity": 1,
+        "line-color": {"stops": [[5, "#AFAFB8"], [10, "#93939D"]]},
+        "line-width": 1
+      }
+    },
+    {
+      "id": "TSP_RoadFederalArterial_Shield",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 9,
+      "filter": ["all", ["has", "shield_id"], ["in", "display_class", 2, 3]],
+      "layout": {
+        "icon-image": [
+          "coalesce",
+          [
+            "image",
+            [
+              "concat",
+              "roadsign-",
+              ["get", "shield_id"],
+              "-",
+              ["max", ["length", ["get", "shield_name"]], 2]
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              [
+                "case",
+                ["in", ["get", "shield_textcol"], "0234"],
+                "roadsign-1010-",
+                "roadsign-1001-"
+              ],
+              ["max", ["length", ["get", "shield_name"]], 2]
+            ]
+          ]
+        ],
+        "symbol-placement": "line",
+        "symbol-spacing": 300,
+        "text-field": ["get", "shield_name"],
+        "text-font": ["Noto Sans Regular"],
+        "text-size": 9,
+        "text-letter-spacing": 0.05,
+        "text-rotation-alignment": "viewport",
+        "icon-size": 0.95,
+        "icon-rotation-alignment": "viewport",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": [
+          "case",
+          ["==", ["get", "shield_textcol"], 0],
+          "rgba(0, 0, 0, 1)",
+          ["==", ["get", "shield_textcol"], 1],
+          "rgba(255, 255, 255, 1)",
+          ["==", ["get", "shield_textcol"], 2],
+          "rgba(212, 0, 0, 1)",
+          ["==", ["get", "shield_textcol"], 3],
+          "rgba(0, 135, 84, 1)",
+          ["==", ["get", "shield_textcol"], 4],
+          "rgba(21, 72, 137, 1)",
+          ["==", ["get", "shield_textcol"], 5],
+          "rgba(240, 202, 0, 1)",
+          "rgba(0, 0, 0, 1)"
+        ],
+        "text-opacity": 1
+      }
+    },
+    {
+      "id": "TSP_RoadHighway_Shield",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 7,
+      "filter": ["all", ["has", "shield_id"], ["in", "display_class", 1]],
+      "layout": {
+        "icon-image": [
+          "coalesce",
+          [
+            "image",
+            [
+              "concat",
+              "roadsign-",
+              ["get", "shield_id"],
+              "-",
+              ["max", ["length", ["get", "shield_name"]], 2]
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              [
+                "case",
+                ["in", ["get", "shield_textcol"], "0234"],
+                "roadsign-1010-",
+                "roadsign-1001-"
+              ],
+              ["max", ["length", ["get", "shield_name"]], 2]
+            ]
+          ]
+        ],
+        "symbol-placement": "line",
+        "symbol-spacing": 300,
+        "text-field": ["get", "shield_name"],
+        "text-font": ["Noto Sans Regular"],
+        "text-size": 9,
+        "text-letter-spacing": 0.05,
+        "text-rotation-alignment": "viewport",
+        "icon-size": 0.95,
+        "icon-rotation-alignment": "viewport",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": [
+          "case",
+          ["==", ["get", "shield_textcol"], 0],
+          "rgba(0, 0, 0, 1)",
+          ["==", ["get", "shield_textcol"], 1],
+          "rgba(255, 255, 255, 1)",
+          ["==", ["get", "shield_textcol"], 2],
+          "rgba(212, 0, 0, 1)",
+          ["==", ["get", "shield_textcol"], 3],
+          "rgba(0, 135, 84, 1)",
+          ["==", ["get", "shield_textcol"], 4],
+          "rgba(21, 72, 137, 1)",
+          ["==", ["get", "shield_textcol"], 5],
+          "rgba(240, 202, 0, 1)",
+          "rgba(0, 0, 0, 1)"
+        ],
+        "text-opacity": 1
+      }
+    },
+    {
+      "id": "TSP_RoadResidential_Label",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["in", "display_class", 6, 7]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[10, 8], [20, 14]]},
+        "text-letter-spacing": 0.15,
+        "text-field": "{street_name}",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#1B1C1F",
+        "text-opacity": {"stops": [[12, 0.6], [13, 1]]},
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "TSP_RoadLocal_Label",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "display_class", 5]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[10, 8], [20, 14]]},
+        "text-letter-spacing": 0.1,
+        "text-field": "{street_name}"
+      },
+      "paint": {
+        "text-color": "#1B1C1F",
+        "text-opacity": {"stops": [[13, 0.6], [14, 1]]},
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255, 255, 255, 0.75)"
+      }
+    },
+    {
+      "id": "TSP_RoadArterial_Label",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "display_class", 4]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[10, 8], [20, 14]]},
+        "text-letter-spacing": 0.1,
+        "text-field": "{street_name}",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#1B1C1F",
+        "text-opacity": {"stops": [[12, 0.6], [13, 1]]},
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255, 255, 255, 0.5)"
+      }
+    },
+    {
+      "id": "TSP_RoadFederal_Label",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["in", "display_class", 2, 3]
+      ],
+      "layout": {
+        "icon-rotation-alignment": "auto",
+        "symbol-placement": "line",
+        "symbol-spacing": 300,
+        "text-field": "{street_name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[10, 8], [20, 14]]},
+        "text-letter-spacing": 0.1,
+        "text-rotation-alignment": "auto",
+        "icon-size": 0.85,
+        "visibility": "visible",
+        "text-justify": "center",
+        "text-anchor": "center"
+      },
+      "paint": {
+        "text-color": "#1B1C1F",
+        "text-opacity": {"stops": [[11, 0.6], [12, 1]]},
+        "text-halo-color": "rgba(255, 255, 255, 0.25)",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "TSP_RoadHighway_Label",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 10,
+      "filter": ["all", ["==", "display_class", 1], ["has", "street_name"]],
+      "layout": {
+        "icon-rotation-alignment": "viewport",
+        "symbol-placement": "line",
+        "symbol-spacing": 1000,
+        "text-field": "{street_name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[10, 8], [20, 14]]},
+        "text-letter-spacing": 0.1,
+        "text-rotation-alignment": "auto",
+        "visibility": "visible",
+        "text-allow-overlap": false,
+        "text-ignore-placement": false,
+        "text-justify": "auto",
+        "text-anchor": "center",
+        "icon-allow-overlap": false,
+        "icon-ignore-placement": false,
+        "icon-text-fit": "none",
+        "icon-keep-upright": false,
+        "icon-anchor": "center",
+        "icon-pitch-alignment": "auto"
+      },
+      "paint": {
+        "text-color": "#1B1C1F",
+        "text-opacity": {"stops": [[10, 0.6], [11, 1]]},
+        "text-halo-color": "rgba(255, 255, 255, 0.25)",
+        "text-halo-width": 2,
+        "icon-translate-anchor": "map"
+      }
+    },
+    {
+      "id": "TSP_RoadFerry_Label",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        ["==", "$type", "LineString"],
+        ["==", "display_class", 110]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[8, 8], [20, 14]]},
+        "text-letter-spacing": 0.1,
+        "text-field": "{ferry_name}"
+      },
+      "paint": {
+        "text-color": "#007890",
+        "text-opacity": {"stops": [[8, 0.6], [9, 1]]}
+      }
+    },
+    {
+      "id": "TSP_RoadExitName_Label",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 13,
+      "filter": ["all", ["has", "exit_name"]],
+      "layout": {
+        "symbol-placement": "line",
+        "text-font": ["Noto Sans Regular"],
+        "text-letter-spacing": 0.15,
+        "text-field": "{exit_name}",
+        "text-padding": 0,
+        "visibility": "visible",
+        "icon-image": [
+          "image",
+          [
+            "concat",
+            "roadsign-1410-",
+            ["max", ["length", ["get", "exit_name"]], 2]
+          ]
+        ],
+        "text-rotation-alignment": "viewport",
+        "icon-rotation-alignment": "viewport",
+        "text-pitch-alignment": "auto",
+        "icon-size": 1.1,
+        "text-allow-overlap": true,
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": false,
+        "text-size": 7
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-opacity": {"stops": [[13, 0.6], [14, 1]]}
+      }
+    },
+    {
+      "id": "LBL_Water_Lake",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 100]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": {
+          "stops": [[6, ["Noto Sans Bold"]], [10, ["Noto Sans Bold"]]]
+        },
+        "text-size": 10,
+        "text-padding": 20,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0,
+        "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "LBL_Water_River",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 101]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": {
+          "stops": [[6, ["Noto Sans Bold"]], [10, ["Noto Sans Bold"]]]
+        },
+        "text-size": 10,
+        "text-padding": 20,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0,
+        "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "LBL_Water_Ocean",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 102]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": {
+          "stops": [[6, ["Noto Sans Bold"]], [10, ["Noto Sans Bold"]]]
+        },
+        "text-size": 10,
+        "text-padding": 20,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0,
+        "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "LBL_Water_Canal",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 103]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": {
+          "stops": [[6, ["Noto Sans Bold"]], [10, ["Noto Sans Bold"]]]
+        },
+        "text-size": 10,
+        "text-padding": 20,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0,
+        "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "LBL_Water_Bay",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 104]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": {
+          "stops": [[6, ["Noto Sans Bold"]], [10, ["Noto Sans Bold"]]]
+        },
+        "text-size": 10,
+        "text-padding": 20,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0,
+        "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "LBL_Park_National",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 120]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Park_State",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 121]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Park_Water",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 122]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Park_City",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 123]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Woodland",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 130]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Beach",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 140]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Allotment",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 150]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Pedestrian_Zone",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 160]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Parking_Lot",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 170]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Parking_Garage",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 180]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Airport",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 190]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Aircraft_Roads",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 200]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Golf_Course",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 210]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Shopping_Center",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 220]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Industrial_Complex",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 230]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_University_College",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 240]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Hospital",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 250]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Cemetery",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 260]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Sport_Complex",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 270]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Amusement_Park",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 280]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Animal_Park",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 290]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_River_Linear",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 300]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Canal_Water_Linear",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "filter": ["all", ["==", "display_class", 310]],
+      "layout": {
+        "text-field": "{name}",
+        "visibility": "visible",
+        "text-font": ["Noto Sans Bold"],
+        "text-size": 10,
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-color": "#51535C",
+        "text-halo-width": 1.2,
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
+        "text-halo-blur": 0
+      }
+    },
+    {
+      "id": "LBL_Housenumber",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabelHouseNumber",
+      "minzoom": 17,
+      "filter": ["all"],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-size": {"stops": [[16, 10], [20, 18]]},
+        "text-padding": {"stops": [[17, 5], [20, 2]]},
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-opacity": 1,
+        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-halo-width": 0,
+        "text-color": {"stops": [[17, "#6A6C75"], [18, "#1B1C1F"]]}
+      }
+    },
+    {
+      "id": "LBL_Hamlet",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 14,
+      "maxzoom": 17,
+      "filter": ["all", ["==", "display_class", 12]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 10,
+        "text-size": 10,
+        "visibility": "visible",
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-color": {"stops": [[14, "#3F4047"], [15, "#1B1C1F"]]},
+        "text-halo-blur": 1,
+        "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
+        "text-halo-width": 2,
+        "text-opacity": 1
+      }
+    },
+    {
+      "id": "LBL_CityOther",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 11,
+      "maxzoom": 17,
+      "filter": ["all", ["in", "display_class", 10, 11]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 10,
+        "text-size": {"stops": [[10, 8], [12, 12], [14, 16]]},
+        "visibility": "visible",
+        "text-letter-spacing": 0.15,
+        "text-transform": "uppercase",
+        "text-ignore-placement": false
+      },
+      "paint": {
+        "text-color": {"stops": [[11, "#3F4047"], [12, "#1B1C1F"]]},
+        "text-halo-blur": 1,
+        "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
+        "text-halo-width": 2,
+        "text-opacity": 1
+      }
+    },
+    {
+      "id": "LBL_CitySmall",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 10,
+      "maxzoom": 17,
+      "filter": ["all", ["in", "display_class", 8, 9]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 10,
+        "text-size": {"stops": [[10, 8], [12, 16], [14, 20]]},
+        "visibility": "visible",
+        "text-letter-spacing": 0.025
+      },
+      "paint": {
+        "text-color": {"stops": [[10, "#3F4047"], [11, "#1B1C1F"]]},
+        "text-halo-blur": 1,
+        "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
+        "text-halo-width": 2,
+        "text-opacity": 1
+      }
+    },
+    {
+      "id": "LBL_CityMedium",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 9,
+      "maxzoom": 17,
+      "filter": ["all", ["in", "display_class", 6, 7]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 10,
+        "text-size": {"stops": [[8, 8], [10, 12], [12, 20], [14, 22]]},
+        "visibility": "visible",
+        "text-letter-spacing": 0.025
+      },
+      "paint": {
+        "text-color": {"stops": [[9, "#3F4047"], [10, "#1B1C1F"]]},
+        "text-halo-blur": 1,
+        "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
+        "text-halo-width": 2,
+        "text-opacity": 1
+      }
+    },
+    {
+      "id": "LBL_City",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 7,
+      "maxzoom": 16,
+      "filter": ["all", ["in", "display_class", 3, 4, 5]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 10,
+        "text-size": {"stops": [[6, 8], [8, 10], [10, 18], [12, 24]]},
+        "visibility": "visible",
+        "text-letter-spacing": 0.025
+      },
+      "paint": {
+        "text-color": {"stops": [[7, "#3F4047"], [8, "#1B1C1F"]]},
+        "text-halo-blur": 1,
+        "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
+        "text-halo-width": 2,
+        "text-opacity": {"stops": [[13, 1], [14, 0]]}
+      }
+    },
+    {
+      "id": "LBL_CityFederal",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 4,
+      "maxzoom": 16,
+      "filter": ["all", ["in", "display_class", 2]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 10,
+        "text-size": {"stops": [[4, 10], [6, 12], [8, 18], [10, 24], [12, 28]]},
+        "visibility": "visible",
+        "text-letter-spacing": 0.025
+      },
+      "paint": {
+        "text-color": {"stops": [[4, "#3F4047"], [5, "#1B1C1F"]]},
+        "text-halo-blur": 1,
+        "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
+        "text-halo-width": 2,
+        "text-opacity": 1
+      }
+    },
+    {
+      "id": "LBL_CityCapital",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 4,
+      "maxzoom": 14,
+      "filter": ["all", ["==", "display_class", 1]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 10,
+        "text-size": {"stops": [[4, 12], [6, 16], [8, 26], [10, 32]]},
+        "visibility": "visible",
+        "text-letter-spacing": 0.05
+      },
+      "paint": {
+        "text-color": {"stops": [[4, "#3F4047"], [5, "#1B1C1F"]]},
+        "text-halo-blur": 1,
+        "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
+        "text-halo-width": 2,
+        "text-opacity": 1
+      }
+    },
+    {
+      "id": "LBL_Country_Small",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 4,
+      "maxzoom": 16,
+      "filter": ["all", ["in", "display_class", 2005, 2006]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 10,
+        "text-size": {"stops": [[2, 8], [4, 10], [6, 12], [8, 22]]},
+        "visibility": "visible",
+        "text-letter-spacing": 0.15,
+        "text-transform": "uppercase"
+      },
+      "paint": {
+        "text-color": {"stops": [[4, "#3F4047"], [5, "#1B1C1F"]]},
+        "text-halo-blur": 1,
+        "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
+        "text-halo-width": 2,
+        "text-opacity": {"stops": [[7, 1], [8, 0]]}
+      }
+    },
+    {
+      "id": "LBL_Country_Medium",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 3,
+      "maxzoom": 16,
+      "filter": ["all", ["in", "display_class", 2003, 2004]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 10,
+        "text-size": {"stops": [[2, 10], [4, 12], [6, 16], [8, 24]]},
+        "visibility": "visible",
+        "text-letter-spacing": 0.15,
+        "text-transform": "uppercase"
+      },
+      "paint": {
+        "text-color": {"stops": [[3, "#3F4047"], [4, "#1B1C1F"]]},
+        "text-halo-blur": 1,
+        "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
+        "text-halo-width": 2,
+        "text-opacity": {"stops": [[7, 1], [8, 0]]}
+      }
+    },
+    {
+      "id": "LBL_Country_Big",
+      "type": "symbol",
+      "source": "ptv",
+      "source-layer": "LayerLabel",
+      "minzoom": 0,
+      "maxzoom": 8,
+      "filter": ["all", ["in", "display_class", 2001, 2002]],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 10,
+        "text-size": {"stops": [[0, 8], [2, 12], [4, 14], [6, 20], [8, 26]]},
+        "visibility": "visible",
+        "text-transform": "uppercase",
+        "text-letter-spacing": 0.15
+      },
+      "paint": {
+        "text-color": "#1B1C1F",
+        "text-halo-blur": 1,
+        "text-halo-color": "rgba(255, 255, 255, 0.75)",
+        "text-halo-width": 2,
+        "text-opacity": {"stops": [[7, 1], [8, 0]]}
+      }
+    }
+  ],
+  "id": "yb88zds9x"
+}

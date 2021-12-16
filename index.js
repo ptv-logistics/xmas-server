@@ -13,14 +13,14 @@ var routingProfile = 'carfast';
 var replaySpeed = 250;
 var responses = null;
 var doLoop = true;
-var moveMap = true;
+var moveMap = false;
 var scenario = 'xmas';
 var routeZoom = 9;
 
 var map = L.map('map', {
     zoomControl: false,
     contextmenu: true,
-    contextmenuWidth: 100,
+    contextmenuWidth: 200,
     maxZoom: 18,
 	fullscreenControl: true,
 	fullscreenControlOptions: {
@@ -86,7 +86,17 @@ var getLayer = function (profile) {
         });
 };
 
-var rasterDark = getLayer("blackmarble").addTo(map);
+var vectorXmas = L.maplibreGL({
+  style: './styles/xmas.json',
+  interactive:false
+}).addTo(map);
+
+var vectorStandard = L.maplibreGL({
+    style: './styles/standard.json',
+    interactive:false
+  });
+  
+var rasterDark = getLayer("blackmarble");
 var rasterLight = getLayer("silica");
 
 new L.Control.Zoom({
@@ -188,11 +198,10 @@ var routingControl = L.Routing.control({
         createMarker: function (i, wp) {
             return L.marker(wp.latLng, {
                 draggable: true,
-                icon: wp.name ? new L.Icon.Label.Default({
-                    labelText: wp.name
-                }) : new L.Icon.Label.Default({
-                    labelText: String.fromCharCode(65 + i)
-                })
+            }).bindTooltip(wp.name? wp.name : String.fromCharCode(65 + i), 
+            {
+                permanent: true, 
+                direction: 'right'
             });
         },
         geocoder: L.Control.Geocoder.ptv({
@@ -298,8 +307,8 @@ routingControl.on('routingerror', function (e) {
 });
 
 routingControl.on('routeselected', function () {
-    if (scenario === 'xmas' && routeZoom)
-        map.setZoom(routeZoom);
+    // if (scenario === 'xmas' && routeZoom)
+    //     map.setZoom(routeZoom);
 });
 
 var BigPointLayer = L.CanvasLayer.extend({
@@ -416,10 +425,11 @@ var BigPointLayer = L.CanvasLayer.extend({
 
 });
 
-
 var snowLayer = new BigPointLayer().addTo(map);
 
 var baseLayers = {
+    "Vector (XMas)": vectorXmas,
+    "Vector (Standard)": vectorStandard,
     "Raster (Dark)": rasterDark,
     "Raster (Light)": rasterLight
 };

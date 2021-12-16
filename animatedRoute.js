@@ -4,7 +4,11 @@ var buildD3Animations = function (alts, replaySpeed, doLoop) {
     if (!map.d3Layer) {
         // create a separate pane for the xmap labels, so they are displayed on top of the route line
         // http://bl.ocks.org/rsudekum/5431771
-        map._panes.svgPane = map._createPane('leaflet-overlay-pane', map.getPanes().labelPane);
+        // map._panes.svgPane = map._createPane('leaflet-overlay-pane', map.getPanes().labelPane);
+        // create a separate pane for the svg
+        map.createPane('svgPane');
+        map.getPane('svgPane').style.zIndex = 600;
+        map.getPane('svgPane').style.pointerEvents = 'none';
 
         // put the 'slowest' trace on top
         d3Layer[2] = new L.SvgLayer({ pointerEvents: 'none', pane: map._panes.svgPane }).addTo(map);
