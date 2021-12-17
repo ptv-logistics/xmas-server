@@ -11,7 +11,7 @@
       "info3": " This is a personal api key. Please get your own free key at https://developer.myptv.com/ ",
       "info4": "                                                                                          ",
       "info5": "------------------------------------------------------------------------------------------",
-"tiles": [
+      "tiles": [
         "https://api.myptv.com/maps/v1/vector-tiles/{z}/{x}/{y}?apiKey=YjA2OGIzOGMxMjdiNGZkOGIwYTMwNmI0OGE4Y2ZiMTc6Y2QwZjUyMDYtMTk2Ni00N2NlLWFmNTYtNzBjOWZjZTgxNzJh"
       ],
       "minZoom": 0,
