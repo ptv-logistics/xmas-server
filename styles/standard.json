@@ -5,7 +5,7 @@
     "sources": {
         "ptv": {
             "type": "vector",
-            "info1": "----------------------------------------------------------------------------------------_-",
+            "info1": "------------------------------------------------------------------------------------------",
             "info2": "                                                                                          ",
             "info3": " This is a personal api key. Please get your own free key at https://developer.myptv.com/ ",
             "info4": "                                                                                          ",
