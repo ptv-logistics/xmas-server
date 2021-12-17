@@ -6,6 +6,11 @@
   "sources": {
     "ptv": {
       "type": "vector",
+      "info1": "-----------------------------------------------------------------------------------------",
+      "info2": "                                                                                         ",
+      "info3": " This is a personal api key. Please get you own free key at https://developer.myptv.com/ ",
+      "info4": "                                                                                         ",
+      "info5": "-----------------------------------------------------------------------------------------",
       "tiles": [
         "https://api.myptv.com/maps/v1/vector-tiles/{z}/{x}/{y}?apiKey=YjA2OGIzOGMxMjdiNGZkOGIwYTMwNmI0OGE4Y2ZiMTc6Y2QwZjUyMDYtMTk2Ni00N2NlLWFmNTYtNzBjOWZjZTgxNzJh"
       ],
