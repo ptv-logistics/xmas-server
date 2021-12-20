@@ -147,6 +147,7 @@ var updateScenario = function () {
         routingControl.setWaypoints([
             new L.Routing.Waypoint(L.latLng(49.01328, 8.42806), "PTV"),
             new L.Routing.Waypoint(L.latLng(48.0126, 7.72338), "Sankt Nikolaus"),
+            new L.Routing.Waypoint(L.latLng(47.70353, 10.60396), "Betlehem"),
             new L.Routing.Waypoint(L.latLng(49.92446, 9.80032), "Himmelstadt"),
             new L.Routing.Waypoint(L.latLng(49.90505, 8.06738), "Engelstadt"),
             new L.Routing.Waypoint(L.latLng(49.01328, 8.42806), "PTV")
@@ -305,6 +306,11 @@ routingControl.hide();
 routingControl.on('routingerror', function (e) {
     alert(e.error.responseJSON.errorMessage);
 });
+
+// markers are not correctly updated when reverse geocoded 
+routingControl._plan.on('waypointgeocoded', function(e) {
+    routingControl._plan._updateMarkers();
+}, this);
 
 routingControl.on('routeselected', function () {
     // if (scenario === 'xmas' && routeZoom)
