@@ -76,7 +76,7 @@ var stop = function () {
 var getLayer = function (profile) {
     return L.tileLayer('https://s0{s}-xserver2-europe-test.cloud.ptvgroup.com/services/rest/XMap/tile/{z}/{x}/{y}?storedProfile={profile}' +
         '&xtok={token}', {
-            attribution: '<a href="http://www.ptvgroup.com">PTV</a>, TOMTOM',
+            attribution: attribution,
             maxZoom: 18,
             subdomains: '1234',
             unloadInvisibleTiles: true,
