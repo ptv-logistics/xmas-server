@@ -54,7 +54,7 @@ rz = parseInt(params.routeZoom);
 if (rz)
     routeZoom = rz;
 
-var attribution = '&copy; 2021 <a href="http://www.ptvgroup.com" target="_blank">PTV AG</a>, HERE';
+var attribution = '&copy; 2021 <a href="https://company.ptvgroup.com/" target="_blank">PTV AG</a>, HERE';
 
 map.setView([0, 0], 0);
 
