@@ -54,7 +54,7 @@ rz = parseInt(params.routeZoom);
 if (rz)
     routeZoom = rz;
 
-var attribution = '<a href="http://www.ptvgroup.com" target="_blank">PTV</a>, HERE';
+var attribution = '&copy; 2021 <a href="http://www.ptvgroup.com" target="_blank">PTV AG</a>, HERE';
 
 map.setView([0, 0], 0);
 
@@ -88,13 +88,15 @@ var getLayer = function (profile) {
 
 var vectorXmas = L.maplibreGL({
   style: './styles/xmas.json',
-  interactive:false
+  interactive:false,
+  attribution: attribution
 }).addTo(map);
 
 var vectorStandard = L.maplibreGL({
     style: './styles/standard.json',
-    interactive:false
-  });
+    interactive:false,
+    attribution: attribution
+});
   
 var rasterDark = getLayer("blackmarble");
 var rasterLight = getLayer("silica");
