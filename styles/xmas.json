@@ -29,10 +29,7 @@
       "layout": {"visibility": "visible"},
       "paint": {
         "background-color": {
-          "stops": [
-            [4, "rgba(216, 224, 245, 1)"],
-            [8, "rgba(113, 123, 156, 1)"]
-          ]
+          "stops": [[4, "rgba(57, 92, 187, 1)"], [8, "rgba(113, 123, 156, 1)"]]
         }
       }
     },
