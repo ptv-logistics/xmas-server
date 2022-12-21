@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "Standard",
+  "name": "Monochrome",
   "metadata": {"maputnik:renderer": "mbgljs"},
   "pitch": 0,
   "sources": {
@@ -18,7 +18,7 @@
       "maxzoom": 17
     }
   },
-  "sprite": "https://vectormaps-resources.myptv.com/icons/latest/sprite",
+  "sprite": "https://vectormaps-resources.myptv.com/icons/latest/sprite_monochrome",
   "glyphs": "https://vectormaps-resources.myptv.com/fonts/latest/{fontstack}/{range}.pbf",
   "layers": [
     {
@@ -29,11 +29,7 @@
       "layout": {"visibility": "visible"},
       "paint": {
         "background-color": {
-          "stops": [
-            [4, "rgba(13, 126, 24, 1)"],
-            [6, "rgba(30, 157, 30, 1)"],
-            [10, "rgba(79, 176, 81, 1)"]
-          ]
+          "stops": [[4, "rgba(65, 96, 140, 1)"], [8, "rgba(41, 57, 103, 1)"]]
         }
       }
     },
@@ -44,7 +40,11 @@
       "source-layer": "LayerBackgroundPolygon",
       "filter": ["all", ["==", "feature_type", 500116]],
       "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "rgba(18, 33, 105, 1)"}
+      "paint": {
+        "fill-color": {
+          "stops": [[6, "rgba(13, 16, 43, 1)"], [10, "rgba(8, 8, 84, 1)"]]
+        }
+      }
     },
     {
       "id": "BKG_BuiltupArea_DC_1",
@@ -59,9 +59,8 @@
       ],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": {
-          "stops": [[11, "rgba(113, 28, 28, 1)"], [12.2, "rgba(93, 19, 19, 1)"]]
-        }
+        "fill-color": "rgba(255, 238, 0, 1)",
+        "fill-opacity": {"stops": [[6, 0], [6.5, 1], [10, 1], [10.5, 1]]}
       }
     },
     {
@@ -77,13 +76,9 @@
       ],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": {
-          "stops": [
-            [11, "rgba(140, 28, 28, 1)"],
-            [12.2, "rgba(107, 18, 18, 1)"]
-          ]
-        },
-        "fill-antialias": false
+        "fill-color": "rgba(255, 200, 0, 1)",
+        "fill-opacity": {"stops": [[6, 0], [6.5, 1], [10, 1], [10.5, 1]]},
+        "fill-antialias": {"stops": [[6, true], [10, true]]}
       }
     },
     {
@@ -99,13 +94,8 @@
       ],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-opacity": 1,
-        "fill-color": {
-          "stops": [
-            [11, "rgba(198, 89, 89, 1)"],
-            [12.2, "rgba(134, 53, 53, 1)"]
-          ]
-        }
+        "fill-color": "rgba(255, 200, 0, 1)",
+        "fill-opacity": {"stops": [[8, 0], [8.5, 1]]}
       }
     },
     {
@@ -121,13 +111,8 @@
       ],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": {
-          "stops": [
-            [11, "rgba(109, 67, 44, 1)"],
-            [12.2, "rgba(138, 84, 54, 1)"]
-          ]
-        },
-        "fill-opacity": 1
+        "fill-color": "rgba(164, 122, 0, 1)",
+        "fill-opacity": {"stops": [[9, 0], [9.5, 1]]}
       }
     },
     {
@@ -143,13 +128,8 @@
       ],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": {
-          "stops": [
-            [11, "rgba(113, 76, 55, 1)"],
-            [12.2, "rgba(105, 70, 49, 1)"]
-          ]
-        },
-        "fill-opacity": 1
+        "fill-color": "rgba(164, 55, 0, 1)",
+        "fill-opacity": {"stops": [[10, 0], [10.5, 1]]}
       }
     },
     {
@@ -157,19 +137,13 @@
       "type": "fill",
       "source": "ptv",
       "source-layer": "LayerBackgroundPolygon",
-      "minzoom": 5,
+      "minzoom": 0,
       "maxzoom": 17,
       "filter": ["all", ["==", "feature_type", 900202]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": {
-          "stops": [
-            [6, "rgba(58, 99, 47, 1)"],
-            [7, "rgba(42, 93, 23, 1)"],
-            [12, "rgba(45, 109, 44, 1)"]
-          ]
-        },
-        "fill-opacity": 1
+        "fill-color": "rgba(0, 81, 81, 1)",
+        "fill-opacity": {"stops": [[6, 0], [6.5, 1]]}
       }
     },
     {
@@ -177,19 +151,13 @@
       "type": "fill",
       "source": "ptv",
       "source-layer": "LayerBackgroundPolygon",
-      "minzoom": 6,
+      "minzoom": 0,
       "maxzoom": 17,
       "filter": ["all", ["==", "feature_type", 900130]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": {
-          "stops": [
-            [6, "rgba(94, 134, 66, 1)"],
-            [7, "rgba(83, 118, 60, 1)"],
-            [12, "rgba(67, 95, 48, 1)"]
-          ]
-        },
-        "fill-opacity": 1
+        "fill-color": "rgba(0, 67, 81, 1)",
+        "fill-opacity": {"stops": [[6, 0], [6.5, 1]]}
       }
     },
     {
@@ -197,19 +165,13 @@
       "type": "fill",
       "source": "ptv",
       "source-layer": "LayerBackgroundPolygon",
-      "minzoom": 6,
-      "maxzoom": 24,
+      "minzoom": 0,
+      "maxzoom": 7,
       "filter": ["all", ["==", "feature_type", 900103]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": {
-          "stops": [
-            [6, "rgba(40, 142, 97, 1)"],
-            [7, "rgba(29, 118, 78, 1)"],
-            [12, "rgba(20, 89, 58, 1)"]
-          ]
-        },
-        "fill-opacity": 1
+        "fill-color": "rgba(0, 70, 81, 1)",
+        "fill-opacity": {"stops": [[6, 0], [6.5, 1]]}
       }
     },
     {
@@ -221,10 +183,8 @@
       "filter": ["all", ["==", "feature_type", 900150]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": {
-          "stops": [[6, "#F3EFED"], [7, "#F2EBE5"], [12, "#FFFFFF"]]
-        },
-        "fill-opacity": 1
+        "fill-color": "rgba(44, 81, 0, 1)",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
     {
@@ -236,7 +196,7 @@
       "filter": ["all", ["==", "feature_type", 2000461]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": "#FFFFFF",
+        "fill-color": "rgba(255, 255, 255, 1)",
         "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
@@ -249,7 +209,7 @@
       "filter": ["all", ["==", "feature_type", 2000460], ["==", "name", ""]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": "#FFFFFF",
+        "fill-color": "rgba(216, 232, 221, 1)",
         "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
@@ -271,20 +231,26 @@
       "type": "fill",
       "source": "ptv",
       "source-layer": "LayerBackgroundPolygon",
-      "minzoom": 0,
+      "minzoom": 4,
       "filter": ["all", ["==", "feature_type", 507116]],
       "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "#122169", "fill-opacity": 1}
+      "paint": {
+        "fill-color": {"stops": [[6, "#C2C3CC"], [10, "#93939D"]]},
+        "fill-opacity": {"stops": [[4, 0], [4.5, 1]]}
+      }
     },
     {
       "id": "BKG_River",
       "type": "fill",
       "source": "ptv",
       "source-layer": "LayerBackgroundPolygon",
-      "minzoom": 0,
+      "minzoom": 7,
       "filter": ["all", ["==", "feature_type", 500412]],
       "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "#122169"}
+      "paint": {
+        "fill-color": {"stops": [[6, "#C2C3CC"], [10, "#93939D"]]},
+        "fill-opacity": {"stops": [[7, 0], [7.5, 1]]}
+      }
     },
     {
       "id": "BKG_Allotment",
@@ -295,7 +261,7 @@
       "filter": ["all", ["==", "feature_type", 900151]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": "#FFFFFF",
+        "fill-color": "rgba(255, 255, 255, 1)",
         "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
@@ -334,13 +300,8 @@
       "filter": ["all", ["==", "feature_type", 2000200]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": {
-          "stops": [
-            [11, "rgba(91, 80, 76, 1)"],
-            [12.2, "rgba(132, 115, 110, 1)"]
-          ]
-        },
-        "fill-opacity": 1
+        "fill-color": "rgba(99, 99, 116, 1)",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
     {
@@ -351,7 +312,7 @@
       "minzoom": 11,
       "filter": ["all", ["==", "feature_type", 2000403]],
       "paint": {
-        "fill-color": "#E0C1CB",
+        "fill-color": "rgba(130, 130, 157, 1)",
         "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
@@ -364,7 +325,7 @@
       "filter": ["all", ["==", "feature_type", 2000124]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": "#C2C3CC",
+        "fill-color": "rgba(69, 55, 52, 1)",
         "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
@@ -375,9 +336,9 @@
       "source-layer": "LayerBackgroundPolygon",
       "minzoom": 11,
       "filter": ["all", ["==", "feature_type", 2000420]],
-      "layout": {"visibility": "none"},
+      "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": "#E3EEE1",
+        "fill-color": "rgba(89, 89, 100, 1)",
         "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
@@ -390,7 +351,7 @@
       "filter": ["all", ["==", "feature_type", 2000408]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": "rgba(224, 193, 203, 1)",
+        "fill-color": "rgba(186, 189, 207, 1)",
         "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
@@ -416,7 +377,7 @@
       "filter": ["all", ["==", "feature_type", 1700216]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": "#C2C3CC",
+        "fill-color": "rgba(255, 255, 255, 1)",
         "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
@@ -429,7 +390,7 @@
       "filter": ["all", ["==", "feature_type", 2000457]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-color": "#FFFFFF",
+        "fill-color": "rgba(255, 255, 255, 1)",
         "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
@@ -440,10 +401,10 @@
       "source-layer": "LayerBackgroundPolygon",
       "minzoom": 11,
       "filter": ["all", ["==", "feature_type", 2000123]],
-      "layout": {"visibility": "none"},
+      "layout": {"visibility": "visible"},
       "paint": {
-        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]},
-        "fill-color": "#FFFFFF"
+        "fill-color": "rgba(255, 255, 255, 1)",
+        "fill-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
     {
@@ -451,10 +412,13 @@
       "type": "fill",
       "source": "ptv",
       "source-layer": "LayerBackgroundPolygon",
-      "minzoom": 0,
+      "minzoom": 10,
       "filter": ["all", ["==", "feature_type", 500414]],
       "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "#66CDE1", "fill-opacity": 1}
+      "paint": {
+        "fill-color": {"stops": [[6, "#C2C3CC"], [10, "#93939D"]]},
+        "fill-opacity": {"stops": [[10, 0], [10.5, 1]]}
+      }
     },
     {
       "id": "BKG_Beach",
@@ -507,13 +471,12 @@
       "type": "line",
       "source": "ptv",
       "source-layer": "LayerBackgroundLine",
-      "minzoom": 0,
+      "minzoom": 10,
       "filter": ["all", ["in", "feature_type", 500412, 500414]],
       "layout": {"visibility": "visible"},
       "paint": {
-        "line-color": "#66CDE1",
-        "line-opacity": 1,
-        "line-width": {"stops": [[14, 1], [16, 2], [18, 4]]}
+        "line-color": {"stops": [[6, "#C2C3CC"], [10, "#93939D"]]},
+        "line-opacity": {"stops": [[10, 0], [10.5, 1]]}
       }
     },
     {
@@ -521,10 +484,15 @@
       "type": "fill",
       "source": "ptv",
       "source-layer": "LayerBackgroundPolygon",
-      "minzoom": 0,
+      "minzoom": 7,
       "filter": ["all", ["==", "feature_type", 500421]],
       "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "#122169", "fill-opacity": 1}
+      "paint": {
+        "fill-color": {
+          "stops": [[6, "rgba(35, 43, 141, 1)"], [10, "rgba(27, 33, 110, 1)"]]
+        },
+        "fill-opacity": {"stops": [[7, 0], [7.5, 1]]}
+      }
     },
     {
       "id": "TSP_RoadPath",
@@ -540,31 +508,9 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-width": {"base": 1.55, "stops": [[4, 1], [20, 4]]},
-        "line-color": {
-          "stops": [[13, "#FFFFFF"], [14, "#DADBE0"], [15, "#C2C3CC"]]
-        },
-        "line-opacity": 1
-      }
-    },
-    {
-      "id": "TSP_RoadPath-dash",
-      "type": "line",
-      "source": "ptv",
-      "source-layer": "LayerTransport",
-      "minzoom": 13,
-      "maxzoom": 24,
-      "filter": ["all", ["==", "display_class", 9]],
-      "layout": {
-        "line-cap": "round",
-        "line-join": "round",
-        "visibility": "visible"
-      },
-      "paint": {
-        "line-width": {"base": 1.55, "stops": [[4, 1], [20, 4]]},
-        "line-color": "#FFFFFF",
-        "line-opacity": 1,
-        "line-dasharray": [2, 2]
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 4]]},
+        "line-color": "hsl(0, 0%, 97%)",
+        "line-opacity": {"stops": [[13, 0], [13.5, 1]]}
       }
     },
     {
@@ -581,8 +527,8 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-width": {"base": 1.55, "stops": [[4, 0.5], [20, 30]]},
-        "line-color": "#EDEDF0",
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]},
+        "line-color": "hsl(0, 0%, 97%)",
         "line-opacity": {"stops": [[13, 0], [13.5, 1]]}
       }
     },
@@ -600,13 +546,13 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-width": {"base": 1.55, "stops": [[4, 0.5], [20, 10]]},
-        "line-color": "#EDEDF0",
+        "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]},
+        "line-color": "hsl(0, 0%, 97%)",
         "line-opacity": {"stops": [[12, 0], [12.5, 1]]}
       }
     },
     {
-      "id": "TSP_RoadLocal_Inner",
+      "id": "TSP_RoadLocal",
       "type": "line",
       "source": "ptv",
       "source-layer": "LayerTransport",
@@ -618,11 +564,8 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#EDEDF0",
-        "line-width": {
-          "base": 1.55,
-          "stops": [[10, 1], [12, 2], [14, 3], [16, 4], [18, 14]]
-        },
+        "line-color": "#fff",
+        "line-width": {"base": 1.55, "stops": [[6, 0.5], [20, 20]]},
         "line-opacity": {"stops": [[11, 0], [11.5, 1]]}
       }
     },
@@ -636,30 +579,15 @@
       "layout": {
         "line-cap": "round",
         "line-join": "round",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "line-color": {
-          "stops": [
-            [8, "#E2DCD8"],
-            [9, "#DADBE0"],
-            [10, "#DADBE0"],
-            [10.75, "#C2C3CC"],
-            [11, "#C2C3CC"],
-            [12, "#DADBE0"]
-          ]
+          "stops": [[8, "#F9F9FA"], [9, "#DADBE0"], [12, "#C2C3CC"]]
         },
         "line-width": {
           "base": 1.55,
-          "stops": [
-            [8, 1],
-            [9, 1],
-            [10, 2],
-            [11, 4],
-            [12, 6],
-            [14, 12],
-            [21, 34]
-          ]
+          "stops": [[8, 1], [10, 2], [11, 4], [12, 6], [14, 7], [18, 13]]
         },
         "line-opacity": 1
       }
@@ -669,7 +597,7 @@
       "type": "line",
       "source": "ptv",
       "source-layer": "LayerTransport",
-      "minzoom": 10,
+      "minzoom": 9,
       "filter": ["all", ["==", "display_class", 4]],
       "layout": {
         "line-cap": "round",
@@ -677,12 +605,31 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": {
-          "stops": [[10.5, "#DADBE0"], [11, "#F9F9FA"], [12, "#F1F1F4"]]
-        },
+        "line-color": "rgba(255, 255, 255, 1)",
         "line-width": {
           "base": 1.55,
-          "stops": [[10, 1], [11, 2], [12, 3], [14, 8], [21, 32]]
+          "stops": [[9, 0], [10, 1], [11, 2], [12, 4], [14, 6], [18, 12]]
+        },
+        "line-opacity": 1
+      }
+    },
+    {
+      "id": "TSP_RoadFederal_Outer-white",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 5,
+      "filter": ["all", ["in", "display_class", 2, 3]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "none"
+      },
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": {
+          "base": 1.4,
+          "stops": [[4, 0], [5, 0], [6, 1], [8, 7], [10, 8], [12, 0], [14, 0]]
         },
         "line-opacity": 1
       }
@@ -692,30 +639,29 @@
       "type": "line",
       "source": "ptv",
       "source-layer": "LayerTransport",
-      "minzoom": 5,
+      "minzoom": 6,
       "filter": ["all", ["in", "display_class", 2, 3]],
       "layout": {
-        "line-cap": "butt",
+        "line-cap": "round",
         "line-join": "round",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
-        "line-color": {
-          "stops": [[5, "rgba(253, 250, 246, 1)"], [6, "rgba(255, 187, 68, 1)"]]
-        },
+        "line-color": {"stops": [[10, "#C2C3CC"], [14, "#AFAFB8"]]},
         "line-width": {
           "base": 1.4,
           "stops": [
-            [6, 1],
-            [7, 2],
+            [4, 0],
+            [5, 0],
+            [6, 0],
             [8, 3],
             [10, 4],
-            [12, 6],
-            [14, 12],
+            [12, 5],
+            [14, 6],
             [21, 34]
           ]
         },
-        "line-opacity": 1
+        "line-opacity": {"stops": [[6, 0.3], [6.5, 1]]}
       }
     },
     {
@@ -723,25 +669,48 @@
       "type": "line",
       "source": "ptv",
       "source-layer": "LayerTransport",
-      "minzoom": 7,
+      "minzoom": 6,
       "filter": ["all", ["in", "display_class", 2, 3]],
       "layout": {
-        "line-cap": "butt",
+        "line-cap": "round",
         "line-join": "round",
         "visibility": "visible"
       },
       "paint": {
-        "line-color": {
-          "stops": [
-            [7, "rgba(255, 187, 68, 1)"],
-            [8, "rgba(255, 231, 194, 1)"],
-            [11, "rgba(255, 231, 194, 1)"],
-            [12, "rgba(251, 235, 212, 1)"]
-          ]
-        },
+        "line-color": {"stops": [[10, "#DADBE0"], [14, "#C2C3CC"]]},
         "line-width": {
           "base": 1.4,
-          "stops": [[8, 1], [10, 2], [12, 3], [14, 8], [21, 30]]
+          "stops": [
+            [4, 0],
+            [5, 0],
+            [6, 0],
+            [8, 1],
+            [10, 2],
+            [12, 3],
+            [14, 4],
+            [21, 30]
+          ]
+        },
+        "line-opacity": {"stops": [[6, 0.3], [6.5, 1]]}
+      }
+    },
+    {
+      "id": "TSP_RoadHighway_Outer-white",
+      "type": "line",
+      "source": "ptv",
+      "source-layer": "LayerTransport",
+      "minzoom": 4,
+      "filter": ["all", ["==", "display_class", 1]],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "none"
+      },
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": {
+          "base": 1.4,
+          "stops": [[4, 0], [5, 2], [6, 3], [8, 8], [10, 9], [12, 0], [14, 0]]
         },
         "line-opacity": 1
       }
@@ -759,20 +728,20 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": {
-          "stops": [[4, "rgba(243, 238, 233, 1)"], [5, "rgba(255, 163, 0, 1)"]]
-        },
+        "line-color": "#AFAFB8",
         "line-width": {
           "base": 1.4,
           "stops": [
+            [4, 0],
+            [4.5, 0.5],
             [5, 1],
             [6, 2],
-            [7, 3],
             [8, 4],
             [10, 6],
             [12, 8],
-            [14, 14],
-            [21, 64]
+            [14, 12],
+            [16, 16],
+            [21, 34]
           ]
         },
         "line-opacity": 1
@@ -783,20 +752,28 @@
       "type": "line",
       "source": "ptv",
       "source-layer": "LayerTransport",
-      "minzoom": 7,
+      "minzoom": 4,
       "filter": ["all", ["==", "display_class", 1]],
       "layout": {
         "line-cap": "round",
         "line-join": "round",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
-        "line-color": {
-          "stops": [[7, "rgba(255, 163, 0, 1)"], [8, "rgba(255, 203, 107, 1)"]]
-        },
+        "line-color": "#C2C3CC",
         "line-width": {
           "base": 1.4,
-          "stops": [[6, 1], [8, 2], [10, 3], [12, 5], [14, 10], [21, 60]]
+          "stops": [
+            [4, 0],
+            [4.5, 0],
+            [5, 0.5],
+            [6, 1],
+            [8, 2],
+            [10, 3],
+            [12, 5],
+            [14, 8],
+            [21, 30]
+          ]
         },
         "line-opacity": 1
       }
@@ -819,7 +796,7 @@
         "line-translate-anchor": "map",
         "line-dasharray": [3, 3],
         "line-opacity": 0.5,
-        "line-color": "#007890"
+        "line-color": "#3F4047"
       }
     },
     {
@@ -860,7 +837,7 @@
       "minzoom": 15,
       "maxzoom": 24,
       "filter": ["all", ["==", "$type", "Polygon"]],
-      "layout": {"visibility": "none"},
+      "layout": {"visibility": "visible"},
       "paint": {
         "fill-extrusion-height": ["get", "height"],
         "fill-extrusion-color": "rgba(255, 255, 255, 1)",
@@ -870,29 +847,17 @@
       }
     },
     {
-      "id": "BKG_BorderCountryLinear_Outer",
+      "id": "BKG_BorderCountryLinear",
       "type": "line",
       "source": "ptv",
       "source-layer": "LayerBackgroundLine",
       "filter": ["all", ["==", "feature_type", 908000]],
-      "layout": {"visibility": "none"},
-      "paint": {
-        "line-opacity": {"stops": [[6, 0.5], [10, 0.4]]},
-        "line-color": "rgba(88, 88, 88, 0.3)",
-        "line-width": {"stops": [[4, 4], [6, 8], [10, 8]]}
-      }
-    },
-    {
-      "id": "BKG_BorderCountryLinear_Inner",
-      "type": "line",
-      "source": "ptv",
-      "source-layer": "LayerBackgroundLine",
-      "filter": ["all", ["==", "feature_type", 908000]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": {"stops": [[4, "#AFAFB8"], [6, "#93939D"]]},
-        "line-width": {"stops": [[2, 1], [4, 2]]}
-      }
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {"line-color": "rgba(206, 206, 206, 0.5)", "line-width": 1}
     },
     {
       "id": "BKG_BorderFederalLinear",
@@ -901,10 +866,19 @@
       "source-layer": "LayerBackgroundLine",
       "minzoom": 5,
       "filter": ["all", ["==", "feature_type", 908001]],
-      "layout": {"visibility": "visible"},
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round"
+      },
       "paint": {
-        "line-opacity": 1,
-        "line-color": {"stops": [[5, "#AFAFB8"], [10, "#93939D"]]},
+        "line-opacity": {"stops": [[5, 0], [5.5, 1]]},
+        "line-color": {
+          "stops": [
+            [6, "rgba(133, 135, 141, 0.25)"],
+            [10, "rgba(172, 172, 172, 1)"]
+          ]
+        },
         "line-width": 1
       }
     },
@@ -1059,7 +1033,7 @@
       },
       "paint": {
         "text-color": "#1B1C1F",
-        "text-opacity": {"stops": [[12, 0.6], [13, 1]]},
+        "text-opacity": {"stops": [[12, 0], [13, 1]]},
         "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 2
       }
@@ -1079,14 +1053,14 @@
         "symbol-placement": "line",
         "text-font": ["Noto Sans Regular"],
         "text-size": {"stops": [[10, 8], [20, 14]]},
-        "text-letter-spacing": 0.1,
+        "text-letter-spacing": 0.15,
         "text-field": "{street_name}"
       },
       "paint": {
         "text-color": "#1B1C1F",
-        "text-opacity": {"stops": [[13, 0.6], [14, 1]]},
-        "text-halo-width": 2,
-        "text-halo-color": "rgba(255, 255, 255, 0.75)"
+        "text-opacity": {"stops": [[13, 0], [14, 1]]},
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 2
       }
     },
     {
@@ -1104,15 +1078,15 @@
         "symbol-placement": "line",
         "text-font": ["Noto Sans Regular"],
         "text-size": {"stops": [[10, 8], [20, 14]]},
-        "text-letter-spacing": 0.1,
+        "text-letter-spacing": 0.15,
         "text-field": "{street_name}",
         "visibility": "visible"
       },
       "paint": {
         "text-color": "#1B1C1F",
-        "text-opacity": {"stops": [[12, 0.6], [13, 1]]},
-        "text-halo-width": 2,
-        "text-halo-color": "rgba(255, 255, 255, 0.5)"
+        "text-opacity": {"stops": [[12, 0], [13, 1]]},
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 2
       }
     },
     {
@@ -1133,7 +1107,7 @@
         "text-field": "{street_name}",
         "text-font": ["Noto Sans Regular"],
         "text-size": {"stops": [[10, 8], [20, 14]]},
-        "text-letter-spacing": 0.1,
+        "text-letter-spacing": 0.15,
         "text-rotation-alignment": "auto",
         "icon-size": 0.85,
         "visibility": "visible",
@@ -1142,8 +1116,8 @@
       },
       "paint": {
         "text-color": "#1B1C1F",
-        "text-opacity": {"stops": [[11, 0.6], [12, 1]]},
-        "text-halo-color": "rgba(255, 255, 255, 0.25)",
+        "text-opacity": {"stops": [[11, 0], [12, 1]]},
+        "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 2
       }
     },
@@ -1160,8 +1134,8 @@
         "symbol-spacing": 1000,
         "text-field": "{street_name}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": {"stops": [[10, 8], [20, 14]]},
-        "text-letter-spacing": 0.1,
+        "text-size": 8,
+        "text-letter-spacing": 0.15,
         "text-rotation-alignment": "auto",
         "visibility": "visible",
         "text-allow-overlap": false,
@@ -1177,8 +1151,8 @@
       },
       "paint": {
         "text-color": "#1B1C1F",
-        "text-opacity": {"stops": [[10, 0.6], [11, 1]]},
-        "text-halo-color": "rgba(255, 255, 255, 0.25)",
+        "text-opacity": {"stops": [[10, 0], [11, 1]]},
+        "text-halo-color": "hsl(0, 0%, 100%)",
         "text-halo-width": 2,
         "icon-translate-anchor": "map"
       }
@@ -1198,12 +1172,12 @@
         "symbol-placement": "line",
         "text-font": ["Noto Sans Regular"],
         "text-size": {"stops": [[8, 8], [20, 14]]},
-        "text-letter-spacing": 0.1,
+        "text-letter-spacing": 0.15,
         "text-field": "{ferry_name}"
       },
       "paint": {
-        "text-color": "#007890",
-        "text-opacity": {"stops": [[8, 0.6], [9, 1]]}
+        "text-color": "#3F4047",
+        "text-opacity": {"stops": [[8, 0], [9, 1]]}
       }
     },
     {
@@ -1216,6 +1190,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-font": ["Noto Sans Regular"],
+        "text-size": 7,
         "text-letter-spacing": 0.15,
         "text-field": "{exit_name}",
         "text-padding": 0,
@@ -1234,12 +1209,11 @@
         "icon-size": 1.1,
         "text-allow-overlap": true,
         "icon-allow-overlap": true,
-        "icon-ignore-placement": false,
-        "text-size": 7
+        "icon-ignore-placement": false
       },
       "paint": {
         "text-color": "#000000",
-        "text-opacity": {"stops": [[13, 0.6], [14, 1]]}
+        "text-opacity": {"stops": [[13, 0], [14, 1]]}
       }
     },
     {
@@ -1260,8 +1234,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0,
         "text-halo-width": 1.2
@@ -1285,8 +1259,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0,
         "text-halo-width": 1.2
@@ -1310,8 +1284,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0,
         "text-halo-width": 1.2
@@ -1335,8 +1309,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0,
         "text-halo-width": 1.2
@@ -1360,8 +1334,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0,
         "text-halo-width": 1.2
@@ -1382,8 +1356,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1404,8 +1378,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1426,8 +1400,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1448,8 +1422,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1470,8 +1444,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1492,8 +1466,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1514,8 +1488,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1536,8 +1510,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1558,8 +1532,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1580,8 +1554,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "rgba(61, 65, 82, 1)",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1602,8 +1576,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1624,8 +1598,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1646,8 +1620,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1668,8 +1642,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1690,8 +1664,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1712,8 +1686,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1734,8 +1708,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1756,8 +1730,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1778,8 +1752,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1800,8 +1774,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1822,8 +1796,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1844,8 +1818,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1866,8 +1840,8 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
-        "text-color": "#51535C",
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-color": "#6A6C75",
         "text-halo-width": 1.2,
         "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]},
         "text-halo-blur": 0
@@ -1883,15 +1857,15 @@
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
-        "text-size": {"stops": [[16, 10], [20, 18]]},
+        "text-size": {"stops": [[16, 10], [18, 12], [20, 14]]},
         "text-padding": {"stops": [[17, 5], [20, 2]]},
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-opacity": 1,
-        "text-halo-color": "rgba(255, 255, 255, 0.5)",
+        "text-opacity": {"stops": [[17, 0.3], [17.5, 0.4]]},
+        "text-halo-color": "rgba(150, 57, 57, 1)",
         "text-halo-width": 0,
-        "text-color": {"stops": [[17, "#6A6C75"], [18, "#1B1C1F"]]}
+        "text-color": "#6A6C75"
       }
     },
     {
@@ -1900,7 +1874,7 @@
       "source": "ptv",
       "source-layer": "LayerLabel",
       "minzoom": 14,
-      "maxzoom": 17,
+      "maxzoom": 24,
       "filter": ["all", ["==", "display_class", 12]],
       "layout": {
         "text-field": "{name}",
@@ -1911,11 +1885,11 @@
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-color": {"stops": [[14, "#3F4047"], [15, "#1B1C1F"]]},
+        "text-color": "#6A6C75",
         "text-halo-blur": 1,
         "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
         "text-halo-width": 2,
-        "text-opacity": 1
+        "text-opacity": {"stops": [[14, 0.5], [14.5, 1]]}
       }
     },
     {
@@ -1924,24 +1898,23 @@
       "source": "ptv",
       "source-layer": "LayerLabel",
       "minzoom": 11,
-      "maxzoom": 17,
+      "maxzoom": 24,
       "filter": ["all", ["in", "display_class", 10, 11]],
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
         "text-max-width": 10,
-        "text-size": {"stops": [[10, 8], [12, 12], [14, 16]]},
+        "text-size": {"stops": [[10, 10], [12, 12], [14, 16]]},
         "visibility": "visible",
         "text-letter-spacing": 0.15,
-        "text-transform": "uppercase",
-        "text-ignore-placement": false
+        "text-transform": "uppercase"
       },
       "paint": {
-        "text-color": {"stops": [[11, "#3F4047"], [12, "#1B1C1F"]]},
+        "text-color": "#6A6C75",
         "text-halo-blur": 1,
         "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
         "text-halo-width": 2,
-        "text-opacity": 1
+        "text-opacity": {"stops": [[11, 0.5], [11.5, 1]]}
       }
     },
     {
@@ -1950,22 +1923,22 @@
       "source": "ptv",
       "source-layer": "LayerLabel",
       "minzoom": 10,
-      "maxzoom": 17,
+      "maxzoom": 24,
       "filter": ["all", ["in", "display_class", 8, 9]],
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
         "text-max-width": 10,
-        "text-size": {"stops": [[10, 8], [12, 16], [14, 20]]},
+        "text-size": {"stops": [[10, 14], [12, 18], [14, 22]]},
         "visibility": "visible",
         "text-letter-spacing": 0.025
       },
       "paint": {
-        "text-color": {"stops": [[10, "#3F4047"], [11, "#1B1C1F"]]},
+        "text-color": "#6A6C75",
         "text-halo-blur": 1,
         "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
         "text-halo-width": 2,
-        "text-opacity": 1
+        "text-opacity": {"stops": [[10, 0.5], [10.5, 1]]}
       }
     },
     {
@@ -1974,22 +1947,22 @@
       "source": "ptv",
       "source-layer": "LayerLabel",
       "minzoom": 9,
-      "maxzoom": 17,
+      "maxzoom": 24,
       "filter": ["all", ["in", "display_class", 6, 7]],
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
         "text-max-width": 10,
-        "text-size": {"stops": [[8, 8], [10, 12], [12, 20], [14, 22]]},
+        "text-size": {"stops": [[10, 16], [12, 22], [14, 24]]},
         "visibility": "visible",
         "text-letter-spacing": 0.025
       },
       "paint": {
-        "text-color": {"stops": [[9, "#3F4047"], [10, "#1B1C1F"]]},
+        "text-color": "#6A6C75",
         "text-halo-blur": 1,
         "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
         "text-halo-width": 2,
-        "text-opacity": 1
+        "text-opacity": {"stops": [[9, 0.5], [9.5, 1]]}
       }
     },
     {
@@ -2004,16 +1977,16 @@
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
         "text-max-width": 10,
-        "text-size": {"stops": [[6, 8], [8, 10], [10, 18], [12, 24]]},
+        "text-size": {"stops": [[8, 12], [10, 20], [12, 26]]},
         "visibility": "visible",
         "text-letter-spacing": 0.025
       },
       "paint": {
-        "text-color": {"stops": [[7, "#3F4047"], [8, "#1B1C1F"]]},
+        "text-color": "#6A6C75",
         "text-halo-blur": 1,
         "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
         "text-halo-width": 2,
-        "text-opacity": {"stops": [[13, 1], [14, 0]]}
+        "text-opacity": {"stops": [[7, 0.5], [7.5, 1]]}
       }
     },
     {
@@ -2028,16 +2001,16 @@
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
         "text-max-width": 10,
-        "text-size": {"stops": [[4, 10], [6, 12], [8, 18], [10, 24], [12, 28]]},
+        "text-size": {"stops": [[5, 12], [6, 14], [8, 18], [10, 24], [12, 30]]},
         "visibility": "visible",
         "text-letter-spacing": 0.025
       },
       "paint": {
-        "text-color": {"stops": [[4, "#3F4047"], [5, "#1B1C1F"]]},
+        "text-color": "#6A6C75",
         "text-halo-blur": 1,
         "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
         "text-halo-width": 2,
-        "text-opacity": 1
+        "text-opacity": {"stops": [[4, 0.5], [4.5, 1]]}
       }
     },
     {
@@ -2046,22 +2019,22 @@
       "source": "ptv",
       "source-layer": "LayerLabel",
       "minzoom": 4,
-      "maxzoom": 14,
+      "maxzoom": 16,
       "filter": ["all", ["==", "display_class", 1]],
       "layout": {
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
         "text-max-width": 10,
-        "text-size": {"stops": [[4, 12], [6, 16], [8, 26], [10, 32]]},
+        "text-size": {"stops": [[4, 14], [6, 20], [8, 24], [10, 28], [12, 34]]},
         "visibility": "visible",
         "text-letter-spacing": 0.05
       },
       "paint": {
-        "text-color": {"stops": [[4, "#3F4047"], [5, "#1B1C1F"]]},
+        "text-color": "#6A6C75",
         "text-halo-blur": 1,
         "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
         "text-halo-width": 2,
-        "text-opacity": 1
+        "text-opacity": {"stops": [[4, 0.5], [4.5, 1]]}
       }
     },
     {
@@ -2076,17 +2049,17 @@
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
         "text-max-width": 10,
-        "text-size": {"stops": [[2, 8], [4, 10], [6, 12], [8, 22]]},
+        "text-size": {"stops": [[2, 10], [4, 12], [6, 16], [8, 24]]},
         "visibility": "visible",
         "text-letter-spacing": 0.15,
         "text-transform": "uppercase"
       },
       "paint": {
-        "text-color": {"stops": [[4, "#3F4047"], [5, "#1B1C1F"]]},
+        "text-color": "#6A6C75",
         "text-halo-blur": 1,
         "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
         "text-halo-width": 2,
-        "text-opacity": {"stops": [[7, 1], [8, 0]]}
+        "text-opacity": {"stops": [[4, 0.5], [5, 1], [7, 1], [8, 0]]}
       }
     },
     {
@@ -2101,17 +2074,17 @@
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
         "text-max-width": 10,
-        "text-size": {"stops": [[2, 10], [4, 12], [6, 16], [8, 24]]},
+        "text-size": {"stops": [[2, 8], [4, 12], [6, 14], [8, 22]]},
         "visibility": "visible",
         "text-letter-spacing": 0.15,
         "text-transform": "uppercase"
       },
       "paint": {
-        "text-color": {"stops": [[3, "#3F4047"], [4, "#1B1C1F"]]},
+        "text-color": "#6A6C75",
         "text-halo-blur": 1,
         "text-halo-color": "hsla(0, 0%, 100%, 0.75)",
         "text-halo-width": 2,
-        "text-opacity": {"stops": [[7, 1], [8, 0]]}
+        "text-opacity": {"stops": [[3, 0.5], [4, 1], [7, 1], [8, 0]]}
       }
     },
     {
@@ -2126,19 +2099,19 @@
         "text-field": "{name}",
         "text-font": ["Noto Sans Regular"],
         "text-max-width": 10,
-        "text-size": {"stops": [[0, 8], [2, 12], [4, 14], [6, 20], [8, 26]]},
+        "text-size": {"stops": [[0, 8], [2, 14], [4, 16], [8, 28]]},
         "visibility": "visible",
         "text-transform": "uppercase",
         "text-letter-spacing": 0.15
       },
       "paint": {
-        "text-color": "#1B1C1F",
+        "text-color": "#6A6C75",
         "text-halo-blur": 1,
         "text-halo-color": "rgba(255, 255, 255, 0.75)",
         "text-halo-width": 2,
-        "text-opacity": {"stops": [[7, 1], [8, 0]]}
+        "text-opacity": {"stops": [[3, 1], [7, 1], [8, 0]]}
       }
     }
   ],
-  "id": "yb88zds9x"
+  "id": "ewskqtdh3"
 }
