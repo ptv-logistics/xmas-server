@@ -1,2 +1,2 @@
 // This key is for demo purposes only. Get your own free api key at https://developer.myptv.com/
-var token = '742DEE87-F0C7-4F71-ADF2-4BF6E3C48270'; // insert your token here
+var token = 'B2B52B12-5271-4079-B0A3-E532C0CD1867'; // insert your token here
