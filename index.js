@@ -54,7 +54,7 @@ rz = parseInt(params.routeZoom);
 if (rz)
     routeZoom = rz;
 
-var attribution = '&copy; 2021 <a href="https://company.ptvgroup.com/" target="_blank">PTV AG</a>, HERE';
+var attribution = '&copy; ' + new Date().getFullYear() +' <a href="https://www.ptvlogistics.com/" target="_blank">PTV Logistics</a>, HERE';
 
 map.setView([0, 0], 0);
 
@@ -97,7 +97,7 @@ var vectorStandard = L.maplibreGL({
     interactive:false,
     attribution: attribution
 });
-  
+
 var rasterDark = getLayer("blackmarble");
 var rasterLight = getLayer("silica");
 
@@ -201,9 +201,9 @@ var routingControl = L.Routing.control({
         createMarker: function (i, wp) {
             return L.marker(wp.latLng, {
                 draggable: true,
-            }).bindTooltip(wp.name? wp.name : String.fromCharCode(65 + i), 
+            }).bindTooltip(wp.name? wp.name : String.fromCharCode(65 + i),
             {
-                permanent: true, 
+                permanent: true,
                 direction: 'right'
             });
         },
@@ -309,7 +309,7 @@ routingControl.on('routingerror', function (e) {
     alert(e.error.responseJSON.errorMessage);
 });
 
-// markers are not correctly updated when reverse geocoded 
+// markers are not correctly updated when reverse geocoded
 routingControl._plan.on('waypointgeocoded', function(e) {
     routingControl._plan._updateMarkers();
 }, this);
@@ -374,7 +374,7 @@ var BigPointLayer = L.CanvasLayer.extend({
     },
 
     //Function to move the snowflakes
-    //angle will be an ongoing incremental flag. Sin and Cos functions will be 
+    //angle will be an ongoing incremental flag. Sin and Cos functions will be
     //applied to it to create vertical and horizontal movements of the flakes
     xupdate: function (progress, dProgress) {
 
